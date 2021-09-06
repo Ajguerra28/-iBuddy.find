@@ -60,5 +60,4 @@ ActiveRecord::Schema.define(version: 2021_09_06_154055) do
 
   add_foreign_key "events", "users"
   add_foreign_key "review_users", "users", column: "reviewee_id"
-  add_foreign_key "review_users", "users", column: "reviewer_id"
 end
