@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_132202) do
+ActiveRecord::Schema.define(version: 2021_09_06_154055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string "location"
+    t.string "name"
+    t.string "category"
+    t.date "date"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "review_users", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.bigint "reviewee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "reviewer_id"
+    t.index ["reviewee_id"], name: "index_review_users_on_reviewee_id"
+    t.index ["reviewer_id"], name: "index_review_users_on_reviewer_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +46,19 @@ ActiveRecord::Schema.define(version: 2021_09_06_132202) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "location"
+    t.string "description"
+    t.string "gender"
+    t.string "phone_number"
+    t.date "date_of_birth"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "users"
+  add_foreign_key "review_users", "users", column: "reviewee_id"
+  add_foreign_key "review_users", "users", column: "reviewer_id"
 end
