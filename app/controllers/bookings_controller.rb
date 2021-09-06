@@ -3,9 +3,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(status: 0)
     @event = Event.find(params[:event_id])
     @booking.event = @event
-    @booking.user = current_user
+    # @booking.user = current_user
 
-    authorize @booking
+    # authorize @booking
 
     if @booking.save
       redirect_to event_path(@event, booked: true)#, notice: 'Great! You just bought an amazing pair of socks!'
