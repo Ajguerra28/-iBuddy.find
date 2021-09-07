@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @events = Sock.where(owner: current_user)
+    @events = Event.where(owner: current_user)
     authorize @user
     if @user.latitude.present? && @user.longitude.present?
         @markers = [
