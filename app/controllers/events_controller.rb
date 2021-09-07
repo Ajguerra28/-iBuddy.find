@@ -1,32 +1,35 @@
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
-    @events = Event.all
+    @events = policy_scope(Event)
   end
 
-  # def my_events
-  #   @events = Event.where(user_id: current_user)
-  #   authorize @events
-  # end
+  def my_events
+    @events = Event.where(user_id: current_user)
+    authorize @events
+  end
 
   def show
     @event = Event.find(params[:id])
-    # authorize @event
+    authorize @event
   end
 
   def new
     @event = Event.new
-    # authorize @event
+    authorize @event
   end
 
   def create
     @event = Event.new(event_params)
-    # @event.id_user = current_user
-    # authorize @event
-    if @event.save
-      # redirect_to user_path(@event.id_user)
-    else
-      render :new
-    end
+    @event.id_user = current_user
+    authorize @event
+    @event.save ? (redirect_to user_path(@event.id_user)) : (render :new)
+  end
+
+  def update
+    @event.update(event_params)
+    @event.save ? (redirect_to event_path(@event)) : (render :new)
   end
 
   private
