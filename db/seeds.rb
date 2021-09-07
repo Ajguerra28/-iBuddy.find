@@ -49,9 +49,33 @@ end
 
 puts "Hello Users"
 
+"Pule dance 1ª time", "Rock in Rio", "Visit MAAT", "New in lisbon", "", "","", "", "", "", "","", "", "", "", ""]
+
+
+event1 = Event.create(name:'Party in Urban', location:'', category:'Night out', date: Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 20 , max_people: 3)
+event2 = Event.create(name:'Dinner at McDonalds', location:'', category:'Gastronomy', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 10, max_people: 4)
+event3 = Event.create(name:'Diving in Sintra', location:'', category:'Sports', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 50, max_people: 2)
+event4 = Event.create(name:'Trip to Porto', location:'', category:'Travel', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 70, max_people: 2)
+event5 = Event.create(name:'Pole dance 1ª time', location:'', category:'Experiences', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 15, max_people:3)
+event6 = Event.create(name:'Rock in Rio', location:'', category:'Events', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 80, max_people: 10)
+event7 = Event.create(name:'Visit MAAT', location:'', category:'Culture', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 5, max_people:4)
+event8 = Event.create(name:'New in Lisbon', location:'', category:'Meet', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:2, max_people:5)
+event9 = Event.create(name:'Climbing', location:'', category:'Sports', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 10, max_people:2)
+event10 = Event.create(name:'Run to Cascais', location:'', category:'Sports', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price: 0, max_people:4)
+event11 = Event.create(name:'Fancy Dinner', location:'', category:'Gastronomy', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:40, max_people:3)
+event12 = Event.create(name:'Felling Lonely :(', location:'', category:'Meet', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:15, max_people:2)
+event13 = Event.create(name:'Alive festival', location:'', category:'Events', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:100, max_people:5)
+event14 = Event.create(name:'Visit museum', location:'', category:'Culture', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:3, max_people:3)
+event15 = Event.create(name:'Let/s go to Bairro', location:'', category:'Night out', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:10, max_people:5)
+event16 = Event.create(name:'Paris trip', location:'', category:'Travel', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:90, max_people:4)
+event17 = Event.create(name:'Algarve holidays', location:'', category:'Travel', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:70, max_people:8)
+event18 = Event.create(name:'Sky dive', location:'', category:'Experiences', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:100, max_people: 1)
+event19 = Event.create(name:'Relax Drink', location:'', category:'', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:10, max_people:5)
+event20 = Event.create(name:'Girls just wanna have fun ;)', location:'', category:'Night out', date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'), description:'', price:20, max_people:5)
+
 20.times do
     event = Event.create(
-        name: Faker::Coffee.notes,
+        name: ,
         location: Faker::Address.city,
         category:['Night out', 'Gastronomy', 'Sports', 'Travel', 'Experiences', 'Events', 'Culture', 'Meet'].sample,
         date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'),
