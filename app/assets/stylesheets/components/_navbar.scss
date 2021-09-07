@@ -22,7 +22,7 @@
   font-family: 'Nunito' !important;
 }
 
-// Buttons
+// Buttons of the Modal
 
 .btn {
   color: rgba(0,0,0,0.5) !important;
@@ -41,5 +41,18 @@
   &:hover{
     background-color: #FD7E13;
     color: white !important;
+  }
+}
+
+.btn-outline-light {
+  border: none !important;
+  margin-top: 2px !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  &:hover {
+    background: none;
+    color: rgba(0, 0, 0, 0.7) !important;
   }
 }
