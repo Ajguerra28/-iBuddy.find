@@ -47,6 +47,7 @@ puts "----------------------------------------------"
     phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
   )
+end
 
   puts "----------------------------------------------"
   puts "-------------- Welcome ladies! ---------------"
@@ -69,6 +70,7 @@ puts "----------------------------------------------"
     phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
   )
+end
 
   puts "----------------------------------------------"
   puts "------------ Welcome gentlemans! -------------"
