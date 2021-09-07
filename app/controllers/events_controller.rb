@@ -22,9 +22,9 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.id_user = current_user
+    @event.user = current_user
     authorize @event
-    @event.save ? (redirect_to user_path(@event.id_user)) : (render :new)
+    @event.save ? (redirect_to user_path(@event.user)) : (render :new)
   end
 
   def update

@@ -53,9 +53,11 @@ puts "Hello Users"
     event = Event.create(
         name: Faker::Coffee.notes,
         location: Faker::Address.city,
-        category:%w[Diving Surf Dinner Festival NightOut Climbing].sample,
+        category:['Night out', 'Gastronomy', 'Sports', 'Travel', 'Experiences', 'Events', 'Culture', 'Meet'].sample,
         date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'),
-        description:Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+        description:Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
+        price: [10, 20, 5, 2].sample,
+        max_people: [1,2,4,6,10].sample,
         user: User.all.sample
     )
 end
