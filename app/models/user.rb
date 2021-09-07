@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_many :review_users, foreign_key: :reviewee_id, class_name: "User"
   has_many :review_users, foreign_key: :reviewer_id, class_name: "User"
   has_many :events
+  geocoded_by :location
+
+  after_validation :geocode, if: :will_save_change_to_location?
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
