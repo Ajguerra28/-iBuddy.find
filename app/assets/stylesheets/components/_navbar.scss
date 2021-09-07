@@ -10,3 +10,36 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+// Modal
+
+.modal-content {
+  border-radius: 15px !important;
+  font-family: "Nunito" !important;
+}
+
+.modal-header {
+  font-family: 'Nunito' !important;
+}
+
+// Buttons
+
+.btn {
+  color: rgba(0,0,0,0.5) !important;
+  font-family: "Nunito " !important;
+  border-radius: 4px !important;
+}
+
+.btn-outline-dark {
+  &:hover{
+    color: white !important;
+  }
+}
+
+.btn-outline-success {
+  border-color: #FD7E13 !important;
+  &:hover{
+    background-color: #FD7E13;
+    color: white !important;
+  }
+}
