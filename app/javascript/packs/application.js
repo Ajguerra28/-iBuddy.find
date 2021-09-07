@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { initMapbox } from '../plugins/init_mapbox';
 // import { initCalendar } from '../plugins/init_calendar';
+import { initTyped } from '../plugins/init_typejs';
 
 Rails.start()
 Turbolinks.start()
@@ -31,4 +32,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   // initCalendar();
+  initTyped();
 });
