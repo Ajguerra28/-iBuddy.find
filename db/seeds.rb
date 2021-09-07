@@ -38,7 +38,7 @@ puts "----------------------------------------------"
 
 15.times do
   user_female = User.create(
-    name: "#{portuguese_female_first_names} #{portuguese_female_last_names}",
+    name: "#{portuguese_female_first_names.sample} #{portuguese_female_last_names.sample}",
     location: locations[counter],
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
     email: Faker::Internet.email,
@@ -61,7 +61,7 @@ end
 
 15.times do
   user_male = User.create(
-    name: "#{portuguese_male_first_names} #{portuguese_male_last_names}",
+    name: "#{portuguese_male_first_names.sample} #{portuguese_male_last_names.sample}",
     location: locations[counter],
     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
     email: Faker::Internet.email,
