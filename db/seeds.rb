@@ -1,54 +1,109 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-require  'faker'
-
+puts "Destroying all the Reviews \ ..."
 ReviewUser.destroy_all
+puts "Destroying all the Events \ ..."
 Event.destroy_all
+puts "Destroying all the Users \ ..."
 User.destroy_all
 
+puts "----------------------------------------------"
+puts "-------------- Almost there... ---------------"
+puts "----------------------------------------------"
+puts "----------- Everything destroyed! ------------"
 
-antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Via Futebol Clube do Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+101927624961', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+puts "----------------------------------------------"
+puts "------ Creating the three musketeers.. -------"
+puts "----------------------------------------------"
 
-david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Rua Manuel Arriaga', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+101912345678', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
-mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+101937826634', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Via Futebol Clube do Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Rua Manuel Arriaga', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
 
-puts "Hello António, David and Mariana!"
-
+puts "----------------------------------------------"
+puts "----- Hello António, David and Mariana! ------"
+puts "----------------------------------------------"
 
 locations = ["Rua Condo Redondo Nº117","Rua Manuel Arriaga Nº8","R. Prof. Hernâni Cidade","Av. da Liberdade","Rua Dom João V","Via Futebol Clube do Porto","R. Dom Tomás de Almeida 61","Via Circular do Montijo","R. Pedro Álvares Cabral 42", "Av. do Uruguai 36"]
 counter = 0
 
-10.times do
-    users = User.create(
-        name: Faker::Name.name,
-        location: locations[counter],
-        description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
-        email: Faker::Internet.email,
-        password: Faker::Number.number(digits: 10),
-        gender: %w[male female].sample,
-        phone_number: Faker::PhoneNumber.phone_number_with_country_code,
-        date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
-    )
-    counter += 1
-    reviewer = User.all - [users]
-    5.times do
-        review = ReviewUser.create(
-            rating: %w[1 2 3 4 5].sample,
-            content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
-            reviewee_id: users,
-            reviewer_id: reviewer.sample
-        )
-    end
+portuguese_female_first_names = %w[Maria Clara Beatriz Matilde Catarina Ana Bruna Vitoria Renata Carlota] # 10
+portuguese_female_last_names = %w[Santos Fernandes Sousa Rocha Alves Esteves Albuquerque Silva Louro Amorim] # 10
+
+portuguese_male_first_names = %w[Diogo Simão João Tiago Bruno Pedro Vasco Tomás Afonso Martim] # 10
+portuguese_male_last_names = %w[Santos Fernandes Sousa Rocha Alves Esteves Albuquerque Silva Louro Amorim] # 10
+
+puts "----------------------------------------------"
+puts "----- Creating some portuguese females! ------"
+puts "----------------------------------------------"
+
+15.times do
+  user_female = User.create(
+    name: "#{portuguese_female_first_names.sample} #{portuguese_female_last_names.sample}",
+    location: locations[counter],
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+    email: Faker::Internet.email,
+    password: '123123',
+    gender: 'Female',
+    phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
+    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
+  )
 end
 
-puts "Hello Users"
-users = User.all
+  puts "----------------------------------------------"
+  puts "-------------- Welcome ladies! ---------------"
+  puts "----------------------------------------------"
+
+  puts "------------------ Hold on! ------------------"
+
+  puts "----------------------------------------------"
+  puts "------ Creating some portuguese males! -------"
+  puts "----------------------------------------------"
+
+15.times do
+  user_male = User.create(
+    name: "#{portuguese_male_first_names.sample} #{portuguese_male_last_names.sample}",
+    location: locations[counter],
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+    email: Faker::Internet.email,
+    password: '123123',
+    gender: 'Male',
+    phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
+    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
+  )
+end
+
+  puts "----------------------------------------------"
+  puts "------------ Welcome gentlemans! -------------"
+  puts "----------------------------------------------"
+
+  puts "------------------ Hold on! ------------------"
+
+  puts "----------------------------------------------"
+  puts "---------- Creating some randoms! ------------"
+  puts "----------------------------------------------"
+
+35.times do
+  user = User.create(
+    name: "#{Faker::Name.first_name} #{Faker::Name.last_name}",
+    location: locations[counter],
+    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+    email: Faker::Internet.email,
+    password: '123123',
+    gender: %w[Male Female].sample,
+    phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
+    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
+  )
+
+  counter += 1
+  reviewer = User.all - [user]
+  5.times do
+    review = ReviewUser.create(
+      rating: %w[1 2 3 4 5].sample,
+      content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+      reviewee_id: user,
+      reviewer_id: reviewer.sample
+    )
+  end
+end
 
 event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night out', date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'Party all night long', price: 20 , max_people: 3)
 event2 = Event.create!(user: users.sample, name:'Dinner at McDonalds', location:'Av. Padre Cruz, 1600-001 Lisboa', category:'Gastronomy', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'Let\s eat like an American', price: 10, max_people: 4)
@@ -70,18 +125,5 @@ event17 = Event.create!(user: users.sample, name:'Algarve holidays', location:'A
 event18 = Event.create!(user: users.sample, name:'Sky dive', location:'Aeródromo de Évora Estr. de Viana, 7005-210 Évora', category:'Experiences', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'May the gravity be with you', price:100, max_people: 1)
 event19 = Event.create!(user: users.sample, name:'Relax Drink', location:'Av. Ribeira das Naus, Lisboa', category:'Night out', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'A good drink, a good conversation and a good sunset', price:10, max_people:5)
 event20 = Event.create!(user: users.sample, name:'Girls just wanna have fun ;)', location:'R. da Cintura do Porto de Lisboa, 1200-109 Lisboa', category:'Night out', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'the name says it all', price:20, max_people:5)
-
-# 20.times do
-#     event = Event.create(
-#         name: ,
-#         location: Faker::Address.city,
-#         category:['Night out', 'Gastronomy', 'Sports', 'Travel', 'Experiences', 'Events', 'Culture', 'Meet'].sample,
-#         date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'),
-#         description:Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
-#         price: [10, 20, 5, 2].sample,
-#         max_people: [1,2,4,6,10].sample,
-#         user_id: User.all.sample
-#     )
-# end
 
 puts "UHUH new Events"
