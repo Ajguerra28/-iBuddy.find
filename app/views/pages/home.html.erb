@@ -24,16 +24,16 @@
     <div class="row mx-auto my-auto">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
-              <%# <% @socks.each_with_index do |sock, index| %> %>
-                <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+              <%# <% @events.each_with_index do |event, index| %> %>
+                <%# <div class="carousel-item <%= index == 0 ? 'active' : '' %>"> %>
                     <div class="col-md-4">
                         <div class="card card-body">
-                          <%# <%= link_to sock_path(sock) do %> %>
-                            <%# <%= cl_image_tag(sock.photo.key, width: 200, height: 200, crop: :fill) %> %>
-                          <% end %>
+                          <%# <%= link_to event_path(event) do %> %>
+                            <%# <%= cl_image_tag(event.photo.key, width: 200, height: 200, crop: :fill) %> %>
+                          <%# <% end %> %>
                         </div>
                     </div>
-                </div>
+                <%# </div> %>
               <%# <% end %> %>
             </div>
             <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
@@ -46,4 +46,57 @@
             </a>
         </div>
     </div>
+</div>
+<h1 class="row-title">Categories</h1>
+<div class="row row-home">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://shop-cdn.sockittome.com/spree/products/33100/large/F0521-RainbowMane-KneeHighSocks-MODEL_SHOT.jpg?1598900130" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT1</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://www.goneforarun.com/on/demandware.static/-/Sites-ChalkTalk_SPORTS_master/default/dwf873c500/tr-37560-lifestyle.jpg" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT2</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="http://cdn.shopify.com/s/files/1/0269/4456/9415/products/ZL2P3986_on_human_grande.jpg?v=1576565407" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT3</h2></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-home">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://shop-cdn.sockittome.com/spree/products/33100/large/F0521-RainbowMane-KneeHighSocks-MODEL_SHOT.jpg?1598900130" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT1</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://www.goneforarun.com/on/demandware.static/-/Sites-ChalkTalk_SPORTS_master/default/dwf873c500/tr-37560-lifestyle.jpg" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT2</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="http://cdn.shopify.com/s/files/1/0269/4456/9415/products/ZL2P3986_on_human_grande.jpg?v=1576565407" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT3</h2></div>
+      </div>
+    </div>
+  </div>
 </div>
