@@ -45,8 +45,8 @@ class EventsController < ApplicationController
       @markers << {
         lat: event.latitude,
         lng: event.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { event: event }),
-        #   image_url: helpers.asset_url('logosocks.png')
+        # info_window: render_to_string(partial: "info_window", locals: { event }),
+        image_url: helpers.asset_url('buddy.png')
       }
     end
   end
