@@ -10,6 +10,8 @@ import "channels"
 import { initMapbox } from '../plugins/init_mapbox';
 // import { initCalendar } from '../plugins/init_calendar';
 import { initTyped } from '../plugins/init_typejs';
+import { carousel } from './plugins/carousel';
+
 
 Rails.start()
 Turbolinks.start()
@@ -33,4 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   // initCalendar();
   initTyped();
+  carousel();
 });
