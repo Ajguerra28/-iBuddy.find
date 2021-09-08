@@ -3,6 +3,8 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event)
+    @markers = []
+    @events.each { |event| add_marker(event) }
   end
 
   def my_events
@@ -12,6 +14,10 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @markers = []
+
+    add_marker(@event)
+
     authorize @event
   end
 
@@ -22,9 +28,9 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.id_user = current_user
+    @event.user = current_user
     authorize @event
-    @event.save ? (redirect_to user_path(@event.id_user)) : (render :new)
+    @event.save ? (redirect_to user_path(@event.user)) : (render :new)
   end
 
   def update
@@ -33,6 +39,17 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def add_marker(event)
+    if event.latitude.present? && event.longitude.present?
+      @markers << {
+        lat: event.latitude,
+        lng: event.longitude,
+        # info_window: render_to_string(partial: "info_window", locals: { event }),
+        image_url: helpers.asset_url('buddy.png')
+      }
+    end
+  end
 
   def event_params
     params.require(:event).permit(:location, :name, :category, :date, :description)

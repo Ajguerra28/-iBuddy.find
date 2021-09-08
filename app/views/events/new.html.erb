@@ -1,0 +1,40 @@
+<div class="main-container-sock m-3">
+  <h2>List your event in here!</h2>
+
+  <%= simple_form_for @event do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name,
+                  required: true,
+                  input_html: { autocomplete: "Name your event" } %>
+      <%= f.input :category,
+                  collection: ['Night out', 'Gastronomy', 'Sports', 'Travel', 'Experiences', 'Events', 'Culture', 'Meet'],
+                  required: true,
+                  input_html: { autocomplete: "Category" } %>
+      <%= f.input :description,
+                  required: true,
+                  input_html: { autocomplete: "Description" } %>
+      <%= f.input :location,
+                  required: true,
+                  input_html: { autocomplete: "Local" } %>
+      <%= f.input :date,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Date" } %>
+      <%= f.input :price,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Price" } %>
+      <%= f.input :max_people,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "Max buddies" } %>
+      <%= f.input :photo, as: :file,
+                  required: false,
+                  input_html: { autocomplete: "Photo" } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Create Sock", class:'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<h2>show</h2>
+
+<%= @event.name %>
+<%= @event.price %>
+
+<h1>Map </h1>
+
+<% if @event.latitude.present? && @event.longitude.present?  %>
+   <div id="map"
+     style="width: 100%; height: 300px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+<% end %>
