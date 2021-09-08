@@ -24,17 +24,17 @@
     <div class="row mx-auto my-auto">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
-              <%# <% @events.each_with_index do |event, index| %> %>
-                <%# <div class="carousel-item <%= index == 0 ? 'active' : '' %>"> %>
+              <% @events.each_with_index do |event, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : ''%>">
                     <div class="col-md-4">
                         <div class="card card-body">
-                          <%# <%= link_to event_path(event) do %> %>
-                            <%# <%= cl_image_tag(event.photo.key, width: 200, height: 200, crop: :fill) %> %>
-                          <%# <% end %> %>
+                          <%= link_to event_path(event) do %>
+                            <img class="card-img-top" src="https://www.workstride.com/wp-content/uploads/2017/04/shutterstock_343738124-1024x701.jpg" alt="Card image cap">
+                          <% end %>
                         </div>
                     </div>
-                <%# </div> %>
-              <%# <% end %> %>
+                </div>
+              <% end %>
             </div>
             <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
@@ -48,7 +48,7 @@
     </div>
 </div>
 <h1 class="row-title">Categories</h1>
-<div class="row row-home">
+<%# <div class="row row-home">
   <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
@@ -96,6 +96,62 @@
       <div class="card-body">
         <img class="card-img-top" src="http://cdn.shopify.com/s/files/1/0269/4456/9415/products/ZL2P3986_on_human_grande.jpg?v=1576565407" alt="Card image cap">
         <div class="centered"><h2 class="card-text">CAT3</h2></div>
+      </div>
+    </div>
+  </div>
+</div> %>
+
+<div class="content-categories">
+  <div class="card-group m-3">
+    <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Night Out</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Sports</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Experiences</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Culture</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-group mx-3 my-3">
+    <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Gastronomy</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Travel</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Events</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Meet</h5>
       </div>
     </div>
   </div>

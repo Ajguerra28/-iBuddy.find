@@ -1,4 +1,4 @@
-const carousel = () => {
+const initCarousel = () => {
   $('#recipeCarousel').carousel({
     interval: 10000
   })
@@ -22,4 +22,4 @@ const carousel = () => {
   });
 };
 
-export { carousel };
+export { initCarousel };
