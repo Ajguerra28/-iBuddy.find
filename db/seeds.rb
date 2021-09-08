@@ -105,6 +105,12 @@ end
   end
 end
 
+puts "----------------------------------------------"
+puts "---------- Creating some Events! ------------"
+puts "----------------------------------------------"
+
+users = User.all
+
 event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night out', date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'Party all night long', price: 20 , max_people: 3)
 event2 = Event.create!(user: users.sample, name:'Dinner at McDonalds', location:'Av. Padre Cruz, 1600-001 Lisboa', category:'Gastronomy', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'Let\s eat like an American', price: 10, max_people: 4)
 event3 = Event.create!(user: users.sample, name:'Diving in Sintra', location:'Avenida Alfredo Coelho, Colares, Sintra', category:'Sports', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'Our planet it\s 71% water.', price: 50, max_people: 2)
@@ -126,4 +132,6 @@ event18 = Event.create!(user: users.sample, name:'Sky dive', location:'Aeródrom
 event19 = Event.create!(user: users.sample, name:'Relax Drink', location:'Av. Ribeira das Naus, Lisboa', category:'Night out', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'A good drink, a good conversation and a good sunset', price:10, max_people:5)
 event20 = Event.create!(user: users.sample, name:'Girls just wanna have fun ;)', location:'R. da Cintura do Porto de Lisboa, 1200-109 Lisboa', category:'Night out', date:Faker::Date.between(from: '2021-09-12', to: '2021-12-25'), description:'the name says it all', price:20, max_people:5)
 
-puts "UHUH new Events"
+puts "----------------------------------------------"
+puts "---------- UHUH new Events -------------------"
+puts "----------------------------------------------"
