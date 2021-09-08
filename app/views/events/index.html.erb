@@ -1,11 +1,23 @@
-<h1>Events</h1>
-
-<ul>
-  
-    <% @events.each do |event| %>
-      <li><%= event.name %></li>
-      <%= event.location %>
-      <%= event.date %>
-      <%= event.price %> 
-    <% end %>
-</ul>
+<div class="main-content">
+  <div class="cards">
+    <div class="row">
+      <% @events.each do |event| %>
+        <div class="col-4">
+          <div class="card mb-4">
+            <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap">
+            <div class="event-body">
+              <div class="event-main-content d-flex justify-content-between mb-2">
+                <h5 class="event-name"><%= event.name %></h5>
+                <h5 class="event-name">€<%= event.price %></h5>
+              </div>
+                <h6 class="card-subtitle text-muted mb-2"><%= event.description.first(50)%>...</h6>
+                <p class="card-subtitle text-muted"><%= event.date %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%# // This will be ignored after because it's going to be an actual map and not an img %>
+  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.346,48.8595,11.72,0,0/600x1000?access_token=pk.eyJ1IjoibWFyaWFuYWNtIiwiYSI6ImNrNHlnaThrcDAwZG0zbW54OHUzMmg2dnQifQ.r7MlHi8BYGEUIL2gcPA-4w'>
+</div>
