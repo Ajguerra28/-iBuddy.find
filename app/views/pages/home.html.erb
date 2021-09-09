@@ -1,30 +1,3 @@
-<%# Testing %>
-<%#
-<div class="container">
-  <div class="calendar">
-    <div class="month">
-      <i class="fas fa-angle-left prev"></i>
-      <div class="date">
-        <h1></h1>
-        <p></p>
-      </div>
-      <i class="fas fa-angle-right next"></i>
-    </div>
-    <div class="weekdays">
-      <div>Sun</div>
-      <div>Mon</div>
-      <div>Tue</div>
-      <div>Wed</div>
-      <div>Thu</div>
-      <div>Fri</div>
-      <div>Sat</div>
-    </div>
-    <div class="days">
-    </div>
-  </div>
-</div> %>
-
-
 <div class="banner">
 <div class="main-container">
     <h1>iBuddy.find</h1>
@@ -42,6 +15,143 @@
         <%= button_tag type: 'submit', class:"search_icon" do %>
           <i class="fas fa-search"></i>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 class="row-title">Upcoming events</h1>
+<div class="container text-center my-3">
+    <div class="row mx-auto my-auto">
+        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner w-100" role="listbox">
+              <% @events.each_with_index do |event, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : ''%>">
+                    <div class="col-md-4">
+                        <div class="card card-body">
+                          <%= link_to event_path(event) do %>
+                            <img class="card-img-top" src="https://www.workstride.com/wp-content/uploads/2017/04/shutterstock_343738124-1024x701.jpg" alt="Card image cap">
+                          <% end %>
+                        </div>
+                    </div>
+                </div>
+              <% end %>
+            </div>
+            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<h1 class="row-title">Categories</h1>
+<%# <div class="row row-home">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://shop-cdn.sockittome.com/spree/products/33100/large/F0521-RainbowMane-KneeHighSocks-MODEL_SHOT.jpg?1598900130" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT1</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://www.goneforarun.com/on/demandware.static/-/Sites-ChalkTalk_SPORTS_master/default/dwf873c500/tr-37560-lifestyle.jpg" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT2</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="http://cdn.shopify.com/s/files/1/0269/4456/9415/products/ZL2P3986_on_human_grande.jpg?v=1576565407" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT3</h2></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-home">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://shop-cdn.sockittome.com/spree/products/33100/large/F0521-RainbowMane-KneeHighSocks-MODEL_SHOT.jpg?1598900130" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT1</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="https://www.goneforarun.com/on/demandware.static/-/Sites-ChalkTalk_SPORTS_master/default/dwf873c500/tr-37560-lifestyle.jpg" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT2</h2></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="http://cdn.shopify.com/s/files/1/0269/4456/9415/products/ZL2P3986_on_human_grande.jpg?v=1576565407" alt="Card image cap">
+        <div class="centered"><h2 class="card-text">CAT3</h2></div>
+      </div>
+    </div>
+  </div>
+</div> %>
+
+<div class="content-categories">
+  <div class="card-group m-3">
+    <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Night Out</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Sports</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Experiences</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Culture</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-group mx-3 my-3">
+    <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Gastronomy</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Travel</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Events</h5>
+      </div>
+    </div>
+      <div class="card m-3">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXN61TBs1tb1RUYXfusqHrtcY71WKE-z2fw&usqp=CAU" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Meet</h5>
       </div>
     </div>
   </div>
