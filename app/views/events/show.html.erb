@@ -1,19 +1,48 @@
-<h2>show</h2>
+<div class="wrapper">
 
-<p>Name: <%= @event.name %><br>
-<p>Price: <%= @event.price %><br>
-<p>Date: <%= @event.date %></p><br>
-<p>Description: <%= @event.description %></p><br>
-<p>Category:<%= @event.category %></p><br>
-<p>Maximum People:<%= @event.max_people %></p><br>
-<p>Location: <%= @event.location %></p><br>
+  <nav class ="sidebar col-3">
+    <%# <div class = "nav nav-sidebar"> %>
+      <ul class="list-unstyled components">
+        <li>Name:<br><%= @event.user.name %></li>
+        <li>Description:<br><%= @event.user.description %></li>
+        <li>Age:<br><%= @event.user.date_of_birth %></li>
+        <li>Email:<br><%= @event.user.email %></li>
+        <li>Gender<br><%= @event.user.gender %></li>
+        <%# <li><%= @event.user.location %>
+      </ul>
+    <%# </div> %>
+  </nav>
+  
+  <div class="show-content col-8">
+    
+    <h2>show</h2>
+    <div><%= link_to events_path do %><p>🎉 Back</p><% end %></div>
+  
 
-<h1>Map </h1>
-
-<% if @event.latitude.present? && @event.longitude.present?  %>
-   <div id="map"
-     style="width: 100%; height: 300px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="event-show">
+      <p><b>Name:</b> <%= @event.name %><br>
+      <p><b>Price: </b><%= @event.price %>€<br>
+      <p><b>Date: </b><%= @event.date %></p><br>
+      <p><b>Description: </b><%= @event.description %></p><br>
+      <p><b>Category: </b><%= @event.category %></p><br>
+      <p><b>Maximum People:</b><%= @event.max_people %></p><br>
+      <p><b>Location: </b><%= @event.location %></p><br>
     </div>
-<% end %>
+
+    <h1>Map </h1>
+    <div>
+      <% if @event.latitude.present? && @event.longitude.present?  %>
+        <div id="map"
+          style="width: 100%; height: 300px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      <% end %>
+    </div>
+
+      
+    
+    
+  </div>
+
+</div>
