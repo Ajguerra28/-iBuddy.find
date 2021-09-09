@@ -1,10 +1,25 @@
+<<<<<<< HEAD
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+=======
 puts "Destroying all the Reviews \ ..."
+>>>>>>> 825733024102a0ae7cde3c23a338dc7a8a6975ef
 ReviewUser.destroy_all
 puts "Destroying all the Events \ ..."
 Event.destroy_all
 puts "Destroying all the Users \ ..."
 User.destroy_all
 
+<<<<<<< HEAD
+=======
 puts "----------------------------------------------"
 puts "-------------- Almost there... ---------------"
 puts "----------------------------------------------"
@@ -14,17 +29,45 @@ puts "----------------------------------------------"
 puts "------ Creating the three musketeers.. -------"
 puts "----------------------------------------------"
 
+>>>>>>> 825733024102a0ae7cde3c23a338dc7a8a6975ef
 antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Via Futebol Clube do Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
 david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Rua Manuel Arriaga', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
 mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
 
+<<<<<<< HEAD
+puts "Hello António, David and Mariana!"
+=======
 puts "----------------------------------------------"
 puts "----- Hello António, David and Mariana! ------"
 puts "----------------------------------------------"
+>>>>>>> 825733024102a0ae7cde3c23a338dc7a8a6975ef
 
 locations = ["Rua Condo Redondo Nº117","Rua Manuel Arriaga Nº8","R. Prof. Hernâni Cidade","Av. da Liberdade","Rua Dom João V","Via Futebol Clube do Porto","R. Dom Tomás de Almeida 61","Via Circular do Montijo","R. Pedro Álvares Cabral 42", "Av. do Uruguai 36"]
 counter = 0
 
+<<<<<<< HEAD
+10.times do
+    user = User.create(
+        name: Faker::Name.name,
+        location: locations[counter],
+        description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+        email: Faker::Internet.email,
+        password: Faker::Number.number(digits: 10),
+        gender: %w[male female].sample,
+        phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+        date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
+    )
+    counter += 1
+    reviewer = User.all - [user]
+    5.times do
+      review = ReviewUser.create(
+        rating: %w[1 2 3 4 5].sample,
+        content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+        reviewee_id: user,
+        reviewer_id: reviewer.sample
+        )
+    end
+=======
 portuguese_female_first_names = %w[Maria Clara Beatriz Matilde Catarina Ana Bruna Vitoria Renata Carlota] # 10
 portuguese_female_last_names = %w[Santos Fernandes Sousa Rocha Alves Esteves Albuquerque Silva Louro Amorim] # 10
 
@@ -69,6 +112,7 @@ end
     phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
   )
+>>>>>>> 825733024102a0ae7cde3c23a338dc7a8a6975ef
 end
 
   puts "----------------------------------------------"
@@ -77,6 +121,16 @@ end
 
   puts "------------------ Hold on! ------------------"
 
+<<<<<<< HEAD
+20.times do
+  event = Event.create(
+    name: Faker::Coffee.notes,
+    location: Faker::Address.city,
+    category:%w[Diving Surf Dinner Festival NightOut Climbing].sample,
+    date:Faker::Date.between(from: '2021-09-01', to: '2021-12-25'),
+    description:Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+    user: User.all.sample
+=======
   puts "----------------------------------------------"
   puts "---------- Creating some randoms! ------------"
   puts "----------------------------------------------"
@@ -101,10 +155,14 @@ end
       content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
       reviewee_id: user,
       reviewer_id: reviewer.sample
+>>>>>>> 825733024102a0ae7cde3c23a338dc7a8a6975ef
     )
   end
 end
 
+<<<<<<< HEAD
+puts "Uhuh new events"
+=======
 puts "----------------------------------------------"
 puts "---------- Creating some Events! ------------"
 puts "----------------------------------------------"
@@ -135,3 +193,4 @@ event20 = Event.create!(user: users.sample, name:'Girls just wanna have fun ;)',
 puts "----------------------------------------------"
 puts "---------- UHUH new Events -------------------"
 puts "----------------------------------------------"
+>>>>>>> 825733024102a0ae7cde3c23a338dc7a8a6975ef
