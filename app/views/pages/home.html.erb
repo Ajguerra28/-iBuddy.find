@@ -1,7 +1,7 @@
 <div class="banner">
 <div class="main-container">
     <h1>iBuddy.find</h1>
-    H<span class="typed-js"></span>
+    <h3 class="typed-js"></h3>
   </div>
 
   <div class="container h-100">
@@ -24,18 +24,43 @@
     <div class="row mx-auto my-auto">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
-              <% @events.each_with_index do |event, index| %>
-                <div class="carousel-item <%= index == 0 ? 'active' : ''%>">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                          <%= link_to event_path(event) do %>
-                            <img class="card-img-top" src="https://www.workstride.com/wp-content/uploads/2017/04/shutterstock_343738124-1024x701.jpg" alt="Card image cap">
-                          <% end %>
-                        </div>
-                    </div>
+              <div class="main-content">
+                <div class="cards">
+                  <div class="row">
+                    <% @events.each do |event| %>
+                      <div class="col-4">
+                        <%= link_to event_path(event) do %>
+                          <div class="card mb-4">
+                            <div id="img-download-upcoming">
+                                      <%= image_tag "rectangle.png" %>
+                                      <%= link_to events_path do %> <%# Implement modal to show more information #%>
+                              <% end %>
+                            </div>
+                            <div class="event-body">
+                              <div class="event-main-content d-flex justify-content-between mb-2">
+                                <p class="card-subtitle text-muted"><%= event.date %></p>
+                              </div>
+                              <div class="event-main-content d-flex justify-content-between mb-2">
+                                <h5 class="event-name"><%= event.name %></h5>
+                              </div>
+                              <div class="event-main-content d-flex location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p class="card-subtitle text-muted"><%= event.category %></p>
+                              </div>
+                              <div class="event-main-content d-flex participants">
+                                <i class="fas fa-user-alt"></i>
+                                <p>3 people</p>
+                                <%# <p class="card-subtitle text-muted"><%= event.participants</p> %>
+                              </div>
+                            </div>
+                          </div>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
-              <% end %>
-            </div>
+              </div>
+      </div>
             <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>

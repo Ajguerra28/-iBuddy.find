@@ -15,6 +15,7 @@
   border-radius: 10px !important;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   align-items: left;
+  height: 320px;
 }
 
 .img-download {
@@ -40,6 +41,7 @@
   flex: 1 1 auto;
   min-height: 1px;
   padding: 0.7rem;
+  margin: auto;
 }
 
 
@@ -52,8 +54,17 @@
   width: 200%;
 }
 
+.fas fa-user-alt {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+}
 
-
+.location .participants {
+  padding: 5px;
+}
 
 // .container {
 //   display: flex;
