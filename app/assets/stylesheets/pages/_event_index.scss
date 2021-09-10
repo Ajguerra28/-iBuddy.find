@@ -54,16 +54,49 @@
   width: 200%;
 }
 
-.fas fa-user-alt {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
+.fa-user-alt, .fa-map-marker-alt, .card-subtitle {
+  color: #FD7E13;
 }
 
 .location .participants {
   padding: 5px;
+}
+
+.location-event {
+  margin: 0;
+  line-height: 2.3;
+  color: #6c757d;
+}
+
+.event-main-content-name {
+  height:55px;
+}
+
+.carousel-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-event {
+   background-color: white;
+
+   .event-name {
+     text-align: left;
+     font-weight: bold;
+   }
+
+   .row {
+     margin: 0;
+   }
+
+   .fa-map-marker-alt {
+     margin: 8px;
+     margin-left: 0;
+   }
+}
+
+.carousel-control {
+  margin: 0 -25px;
 }
 
 // .container {
