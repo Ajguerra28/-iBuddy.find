@@ -1,14 +1,23 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #f5f5f5;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  font-family: "Nunito";
+}
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  border-radius: 10px;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px;
+  width: 60px;
+}
+
+.dropdown-item {
+  font-family: "Nunito";
 }
 
 // Modal
@@ -22,11 +31,11 @@
   font-family: 'Nunito' !important;
 }
 
-// Buttons
+// Buttons of the Modal
 
 .btn {
   color: rgba(0,0,0,0.5) !important;
-  font-family: "Nunito " !important;
+  font-family: "Nunito" !important;
   border-radius: 4px !important;
 }
 
@@ -41,5 +50,18 @@
   &:hover{
     background-color: #FD7E13;
     color: white !important;
+  }
+}
+
+.btn-outline-light {
+  border: none !important;
+  margin-top: 2px !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  &:hover {
+    background: none;
+    color: rgba(0, 0, 0, 0.7) !important;
   }
 }
