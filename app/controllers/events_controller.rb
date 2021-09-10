@@ -14,6 +14,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @booking = Booking.new
     @markers = []
 
     add_marker(@event)
@@ -23,6 +24,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    3.times { @event.event_days.build }
     authorize @event
   end
 
@@ -30,7 +32,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     authorize @event
-    @event.save ? (redirect_to user_path(@event.user)) : (render :new)
+
+    @event.save ? (redirect_to event_path(@event)) : (render :new)
   end
 
   def update
@@ -52,6 +55,9 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:location, :name, :category, :date, :description)
+    params.require(:event).permit(
+      :location, :name, :category, :description, :max_people,
+      event_days_attributes: [:date]
+    )
   end
 end

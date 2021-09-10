@@ -5,8 +5,12 @@ Rails.application.routes.draw do
     collection do
       get :my_events
     end
-    resources :bookings, only: %i[new create show]
   end
+
+  resources :event_days, only: [] do
+    resources :bookings, only: :create
+  end
+
   resources :users, only: :show
 
   root to: 'pages#home'

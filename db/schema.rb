@@ -10,34 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_110754) do
+ActiveRecord::Schema.define(version: 2021_09_10_135805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "booking_days", force: :cascade do |t|
+  create_table "bookings", force: :cascade do |t|
+    t.integer "status", default: 0, null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "event_day_id"
+    t.index ["event_day_id"], name: "index_bookings_on_event_day_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "event_days", force: :cascade do |t|
     t.date "date"
     t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_booking_days_on_event_id"
-  end
-
-  create_table "bookings", force: :cascade do |t|
-    t.integer "status", default: 0, null: false
-    t.bigint "user_id", null: false
-    t.bigint "booking_days_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["booking_days_id"], name: "index_bookings_on_booking_days_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["event_id"], name: "index_event_days_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
     t.string "location"
     t.string "name"
     t.string "category"
-    t.date "date"
     t.string "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -78,10 +77,8 @@ ActiveRecord::Schema.define(version: 2021_09_08_110754) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "booking_days", "events"
-  add_foreign_key "bookings", "booking_days", column: "booking_days_id"
   add_foreign_key "bookings", "users"
+  add_foreign_key "event_days", "events"
   add_foreign_key "events", "users"
   add_foreign_key "review_users", "users", column: "reviewee_id"
-  add_foreign_key "review_users", "users", column: "reviewer_id"
 end
