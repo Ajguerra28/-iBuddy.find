@@ -1,7 +1,7 @@
 <div class="banner">
 <div class="main-container">
     <h1>iBuddy.find</h1>
-    H<span class="typed-js"></span>
+    <h3 class="typed-js"></h3>
   </div>
 
   <div class="container h-100">
@@ -25,28 +25,53 @@
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
               <% @events.each_with_index do |event, index| %>
-                <div class="carousel-item <%= index == 0 ? 'active' : ''%>">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                          <%= link_to event_path(event) do %>
-                            <img class="card-img-top" src="https://www.workstride.com/wp-content/uploads/2017/04/shutterstock_343738124-1024x701.jpg" alt="Card image cap">
-                          <% end %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+                  <div class="col-4">
+                    <%= link_to event_path(event) do %>
+                      <div class="card card-event mb-4">
+                        <div id="img-download-upcoming">
+                          <%= image_tag "rectangle.png" %>
                         </div>
-                    </div>
+                        <div class="event-body">
+                          <div class="event-main-content d-flex justify-content-between mb-2">
+                            <p class="card-subtitle"><%= event.date %></p>
+                          </div>
+                          <div class="event-main-content-name d-flex justify-content-between mb-2">
+                            <h5 class="event-name"><%= event.name.capitalize %></h5>
+                          </div>
+                          <div class="row d-flex justify-content-between mb-2">
+                            <div class="event-main-content d-flex location">
+                              <i class="fas fa-map-marker-alt"></i>
+                              <p class="location-event">Lisbon</p>
+                              <%# <p class="card-subtitle text-muted"><%= event.category</p> %>
+                            </div>
+                            <div class="event-main-content d-flex participants">
+                              <i class="fas fa-user-alt m-2"></i>
+                              <p class= "location-event">3 people</p>
+                              <%# <p class="card-subtitle text-muted"><%= event.participants</p> %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               <% end %>
             </div>
-            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+
+            <a class="carousel-control carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+            <a class="carousel-control carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+          </div>
         </div>
     </div>
 </div>
+
 <h1 class="row-title">Categories</h1>
 <div class="content-categories">
   <div class="card-group m-3">
@@ -90,13 +115,13 @@
       </div>
     </div>
       <div class="card m-3">
-      <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/lKuxJbHvxzn5DH33FR08TZBJ8ewobSQvU_y2eDcofCaonedq03xv8MxfgHVfN_9hIBqvQ8k4ht0dRRD0VlMIR07EI7y6zAk" alt="Card image cap">
+      <img class="card-img-top" src="https://www.vippng.com/png/detail/112-1127185_how-to-set-use-desk-calendar-svg-vector.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Events</h5>
       </div>
     </div>
       <div class="card m-3">
-      <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/kvA2NQVQwP6fuXxXMnUyAKYcZWfgYIZyuev-gMC_0BJhobxrRGL04rxw_TpCefXcRMSpIX5bDVrPq6e9nBIcjk6O13i9HhETfC4" alt="Card image cap">
+      <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/-zdI94q3V6x8f4w4QKM4-A015PcPX9mwWRuWdiIrkqKmn3fCTk7gB-M2DgXafPXQqIoebd8iV2lFGawEcZmcZ5Jv" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Meet</h5>
       </div>
