@@ -7,6 +7,7 @@ class BookingPolicy < ApplicationPolicy
 
   def create?
     # Can only create if the event's not full
-    # record.booking.max_people <= record.booking.max_people.count
+    record.event_day.event.people_left.positive?
+    # record.max_people.positive?
   end
 end

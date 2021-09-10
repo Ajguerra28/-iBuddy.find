@@ -7,7 +7,7 @@
                   required: true,
                   input_html: { autocomplete: "Name your event" } %>
       <%= f.input :category,
-                  collection: ['Night out', 'Gastronomy', 'Sports', 'Travel', 'Experiences', 'Events', 'Culture', 'Meet'],
+                  collection: Event::CATEGORIES,
                   required: true,
                   input_html: { autocomplete: "Category" } %>
       <%= f.input :description,
@@ -16,10 +16,11 @@
       <%= f.input :location,
                   required: true,
                   input_html: { autocomplete: "Local" } %>
-      <%= f.input :date,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "Date" } %>
+
+      <%= f.simple_fields_for :event_days do |ff| %>
+        <%= ff.input :date, as: :date %>
+      <% end %>
+
       <%= f.input :price,
                   required: true,
                   autofocus: true,
@@ -34,7 +35,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Create Sock", class:'btn btn-primary' %>
+      <%= f.button :submit, "Create event", class:'btn btn-primary' %>
     </div>
   <% end %>
 </div>
