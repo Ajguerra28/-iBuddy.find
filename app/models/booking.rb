@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  belongs_to :booking_day
+  belongs_to :event_day
 
   validates :status, presence: true
 

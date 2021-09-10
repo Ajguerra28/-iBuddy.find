@@ -29,6 +29,10 @@ class EventPolicy < ApplicationPolicy
     true
   end
 
+  def create_booking?
+    record.people_left.positive?
+  end
+
   private
 
   def owner?
