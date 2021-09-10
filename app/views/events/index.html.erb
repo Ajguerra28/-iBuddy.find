@@ -1,25 +1,61 @@
+<%# <div class="container">
+  <div class="tag-item">
+    <input type="checkbox" class="tag-selector" id="sport" name="sport">
+    <label for="sport" class="">Sports</label>
+  </div>
+
+  <div class="tag-item">
+    <input type="checkbox" class="tag-selector" id="sport" name="sport">
+    <label for="sport" class="">Sports</label>
+  </div>
+
+  <div class="tag-item">
+    <input type="checkbox" class="tag-selector" id="sport" name="sport">
+    <label for="sport" class="">Sports</label>
+  </div>
+
+  <div class="tag-item">
+    <input type="checkbox" class="tag-selector" id="sport" name="sport">
+    <label for="sport" class="">Sports</label>
+  </div>
+
+  <div class="tag-item">
+    <input type="checkbox" class="tag-selector" id="sport" name="sport">
+    <label for="sport" class="">Sports</label>
+  </div>
+</div> %>
+
+
 <div class="main-content">
   <div class="cards">
     <div class="row">
       <% @events.each do |event| %>
-        <div class="col-4">
+          <div class="col-4">
+          <%= link_to event_path(event) do %>
           <div class="card mb-4">
-            <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap">
+            <div class="img-download">
+              <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap">
+              <%= link_to events_path do %> <%# Implement modal to show more information #%>
+                <i class="far fa-eye"></i>
+              <% end %>
+            </div>
             <div class="event-body">
               <div class="event-main-content d-flex justify-content-between mb-2">
                 <h5 class="event-name"><%= event.name %></h5>
-                <h5 class="event-name">€<%= event.price %></h5>
+                <h5 class="event-name">€<%= event.price %>0</h5>
               </div>
-                <h6 class="card-subtitle text-muted mb-2"><%= event.description.first(90)%>...</h6>
-                <p class="card-subtitle text-muted"><%= event.date %></p>
+                <h6 class="card-subtitle text-muted mb-2"><%= event.description.first(40)%>...</h6>
+                <div class="event-main-content d-flex justify-content-between mt-2">
+                  <p class="card-subtitle text-muted"><%= event.category %></p>
+                  <p class="card-subtitle text-muted"><%= event.date %></p>
+                </div>
             </div>
           </div>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
-  <%# // This will be ignored after because it's going to be an actual map and not an img %>
-  <%# <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.346,48.8595,11.72,0,0/600x1000?access_token=pk.eyJ1IjoibWFyaWFuYWNtIiwiYSI6ImNrNHlnaThrcDAwZG0zbW54OHUzMmg2dnQifQ.r7MlHi8BYGEUIL2gcPA-4w'> %>
   <div id="map"
     <% @events.each do |event| %>
       <% if event.latitude.present? && event.longitude.present?  %>
