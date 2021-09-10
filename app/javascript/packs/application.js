@@ -11,7 +11,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 // import { initCalendar } from '../plugins/init_calendar';
 import { initTyped } from '../plugins/init_typejs';
 import { initCarousel } from '../plugins/init_carousel';
-
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 Rails.start()
 Turbolinks.start()
@@ -34,6 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   // initCalendar();
+  initSweetalert();
   initTyped();
   initCarousel();
 });

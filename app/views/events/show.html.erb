@@ -18,13 +18,13 @@
         <p><i class="fas fa-venus-mars"></i>  <%= @event.user.gender %></p>
       </div>
     </div>
-  </nav>  
-  
+  </nav>
+
   <div class="show-content col-9">
     <h1><%= @event.name %></h1>
     <div><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %>
   </div>
-  
+
 
 <div class="event-card-show">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
@@ -34,11 +34,11 @@
     <p><i class="fas fa-pen-square"></i>  <%= @event.description %></p>
     <p><i class="fas fa-glass-cheers "></i>  <%= @event.category %></p>
     <p><i class="fas fa-euro-sign"></i>  <%= @event.price %></p>
-    <p><i class="fas fa-users" id="max_people"></i>  <%= @event.people_left %></p>
+    <p><i class="fas fa-users"></i>  <span id="max_people"><%= @event.people_left %></span></p>
     <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %></p>
   </div>
   <div class="event-card-show-info ml-auto mr-3 p-3">
-    <% if @event.user != current_user %>
+  <% if @event.user != current_user %>
       <% if @event.day.booked_by?(current_user) %>
         <span>It seems you've already joined this event!</span>
       <% elsif !policy(@event).create_booking? %>
