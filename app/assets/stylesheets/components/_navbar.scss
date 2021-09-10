@@ -5,10 +5,19 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  font-family: "Nunito";
+}
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  border-radius: 10px;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px;
+  width: 60px;
+}
+
+.dropdown-item {
+  font-family: "Nunito";
 }
 
 // Modal
