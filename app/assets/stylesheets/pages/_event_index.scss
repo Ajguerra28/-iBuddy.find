@@ -54,8 +54,21 @@
   width: 200%;
 }
 
-.fa-user-alt, .fa-map-marker-alt, .card-subtitle {
+.fa-user-alt, .fa-map-marker-alt, .card-subtitle, .card-body-home-page {
   color: #FD7E13;
+}
+
+.card-home-page {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.card-body-home-page .centered {
+  transition: transform .2s;
+  &:hover {
+    color: black;
+  }
 }
 
 .location .participants {
