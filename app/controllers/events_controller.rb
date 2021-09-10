@@ -2,9 +2,13 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @events = policy_scope(Event)
-    @markers = []
-    @events.each { |event| add_marker(event) }
+    if params[:category]
+      @events = policy_scope(Event).where(category: params[:category]) 
+    else
+      @events = policy_scope(Event)
+      @markers = []
+      @events.each { |event| add_marker(event) } 
+    end
   end
 
   def my_events
