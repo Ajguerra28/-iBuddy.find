@@ -27,14 +27,14 @@
 
 
 <div class="main-content">
-  <div class="cards">
+  <div class="cards2">
     <div class="row">
       <% @events.each do |event| %>
           <div class="col-4">
           <%= link_to event_path(event) do %>
-          <div class="card mb-4">
+          <div class="card2 mb-4">
             <div class="img-download">
-              <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap">
+              <img class="card2-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap">
               <%= link_to events_path do %> <%# Implement modal to show more information #%>
                 <i class="far fa-eye"></i>
               <% end %>
