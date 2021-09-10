@@ -1,6 +1,8 @@
 puts "Destroying all the Reviews \ ..."
 ReviewUser.destroy_all
 puts "Destroying all the Events \ ..."
+Booking.destroy_all
+EventDay.destroy_all
 Event.destroy_all
 puts "Destroying all the Users \ ..."
 User.destroy_all

@@ -3,11 +3,11 @@ class EventsController < ApplicationController
 
   def index
     if params[:category]
-      @events = policy_scope(Event).where(category: params[:category]) 
+      @events = policy_scope(Event).where(category: params[:category])
     else
       @events = policy_scope(Event)
       @markers = []
-      @events.each { |event| add_marker(event) } 
+      @events.each { |event| add_marker(event) }
     end
   end
 
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    3.times { @event.event_days.build }
+    # 3.times { @event.event_days.build }
     authorize @event
   end
 
