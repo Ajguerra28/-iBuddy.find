@@ -2,8 +2,8 @@ import Swal from "sweetalert2";
 
 const initSweetalert = (selector, options = {}) => {
   const swalButton = document.querySelector('#sweet-alert-demo');
-  let max_people = document.getElementById('max_people').innerText;
   if (swalButton) {
+    let max_people = document.getElementById('max_people').innerText;
     // protect other pages
     swalButton.addEventListener("click", (event) => {
       event.preventDefault();
@@ -11,13 +11,13 @@ const initSweetalert = (selector, options = {}) => {
       console.log(max_peopleConverted);
       // swal(options);
       Swal.fire({
-        title: "Do you wanna buy this sock?",
-        text: `There are just ${max_peopleConverted} left`,
+        title: "Join this adventure?",
+        text: `There are still ${max_peopleConverted} people left`,
         icon: "question",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, buy now!",
+        confirmButtonText: "Yes, join now!",
       }).then((result) => {
         if (result.isConfirmed) {
           // Swal.fire(
