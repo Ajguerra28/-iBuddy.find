@@ -13,14 +13,12 @@
 .banner {
   background: linear-gradient(180deg, rgba(41, 163, 215, 0.5) 0%, rgba(253, 126, 19, 0.5) 100%), url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJpZW5kcyUyMGhhbmdpbmclMjBvdXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');
   background-size: cover;
-  // padding: 190px 0px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   height: 500px;
 }
 .searchbar{
   margin-bottom: auto;
-  // margin-top: auto ;
   height: 60px;
   background-color: rgba($color: #f9f9f9, $alpha: 0.7);
   border-radius: 30px;
@@ -81,5 +79,11 @@ body {
   img {
     width: 338px;
     height: 183px;
+  }
+}
+.steps_image {
+  img {
+    width: 100vw;
+    height: auto;
   }
 }
