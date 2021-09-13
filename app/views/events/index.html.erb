@@ -1,54 +1,40 @@
-<%# <div class="container">
-  <div class="tag-item">
-    <input type="checkbox" class="tag-selector" id="sport" name="sport">
-    <label for="sport" class="">Sports</label>
-  </div>
-
-  <div class="tag-item">
-    <input type="checkbox" class="tag-selector" id="sport" name="sport">
-    <label for="sport" class="">Sports</label>
-  </div>
-
-  <div class="tag-item">
-    <input type="checkbox" class="tag-selector" id="sport" name="sport">
-    <label for="sport" class="">Sports</label>
-  </div>
-
-  <div class="tag-item">
-    <input type="checkbox" class="tag-selector" id="sport" name="sport">
-    <label for="sport" class="">Sports</label>
-  </div>
-
-  <div class="tag-item">
-    <input type="checkbox" class="tag-selector" id="sport" name="sport">
-    <label for="sport" class="">Sports</label>
-  </div>
-</div> %>
-
-
 <div class="main-content">
   <div class="cards">
     <div class="row">
       <% @events.each do |event| %>
           <div class="col-4">
           <%= link_to event_path(event) do %>
-          <div class="card mb-4">
+          <div class="card card-event mb-4">
             <div class="img-download">
-              <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap">
+              <%# <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap"> %>
+              <%= cl_image_tag  "development/#{event.photo.key}", crop: :fill, class: "card-img-top" %>
               <%= link_to events_path do %> <%# Implement modal to show more information #%>
                 <i class="far fa-eye"></i>
               <% end %>
             </div>
             <div class="event-body">
               <div class="event-main-content d-flex justify-content-between mb-2">
-                <h5 class="event-name"><%= event.name %></h5>
-                <h5 class="event-name">€<%= event.price %>0</h5>
+                <p class="card-subtitle"><%= event.day.date %></p>
               </div>
-                <h6 class="card-subtitle text-muted mb-2"><%= event.description.first(40)%>...</h6>
-                <div class="event-main-content d-flex justify-content-between mt-2">
-                  <p class="card-subtitle text-muted"><%= event.category %></p>
-                  <p class="card-subtitle text-muted"><%#= event.day.date %></p>
+              <div class="event-main-content-name d-flex justify-content-between">
+                <h5 class="event-name"><%= event.name.capitalize %></h5>
+              </div>
+              <div class="row mb-2">
+                <div class="event-main-content d-flex location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <p class="location-event"><%= event.location %></p>
                 </div>
+              </div>
+              <div class="row">
+                <div class="event-main-content d-flex participants">
+                  <i class="fas fa-user-alt mr-2 mt-2"></i>
+                  <% if event.max_people <= 3 %>
+                    <p class="location-event">Hurry up! There are only <%= event.people_left %> spots left!</p>
+                  <% else %>
+                    <p class= "location-event"><%= event.people_left %> spots left</p>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
           <% end %>
@@ -57,12 +43,8 @@
     </div>
   </div>
   <div id="map"
-    <% @events.each do |event| %>
-      <% if event.latitude.present? && event.longitude.present?  %>
-        style="width: 900%; height: 100vh;"
+        style="height: 100vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      <% end %>
-    <% end %>
   </div>
 </div>

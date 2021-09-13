@@ -1,3 +1,21 @@
+.carousel {
+  padding: 16px;
+  .card-img-top {
+    border-radius: 10px 10px 0px 0px;
+    height: 200px;
+  }
+
+}
+
+.carousel-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.carousel-control {
+  margin: 0 -25px;
+}
+
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
         display: none;

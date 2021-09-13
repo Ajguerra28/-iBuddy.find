@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   has_many :event_days
   has_many :bookings, through: :event_days
   geocoded_by :location
+  has_one_attached :photo
 
   CATEGORIES = [
     'Night out',
