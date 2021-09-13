@@ -6,7 +6,7 @@
   list-style: none;
   text-decoration: none;
   font-family: Nunito;
-} 
+}
 
 body{
    background-color: #f3f5f9;
@@ -32,7 +32,7 @@ body{
   border-bottom: 1px solid rgba(0,0,0,0.05);
   border-top: 1px solid rgba(255,255,255,0.05);
   color: white;
-}    
+}
 
 // .wrapper .sidebar ul li a{
 //   color: #bdb8d7;
@@ -44,9 +44,9 @@ body{
 }
 
 .avatar-event-show {
-  width: 90px;
+  width: 100px;
   border-radius: 50%;
-  
+
 }
 
 .sidebar-card {
@@ -66,6 +66,7 @@ body{
   padding-right: 30px;
   p {
     margin: 0px;
+    font-size: 16px;
   }
 }
 
@@ -74,7 +75,7 @@ body{
 }
 
 .sidecard-email {
-  font-size: 12px;
+  font-size: 16px;
   color: #FEBF89;
 }
 
@@ -89,7 +90,7 @@ body{
   justify-content: space-around;
   flex-direction: column;
   align-content: center;
- 
+
   // flex-grow: 1;
   h1 {
     font-size: 35px;
@@ -99,7 +100,7 @@ body{
     text-decoration: none;
     color: black;
   }
-  
+
 }
 
 
@@ -120,13 +121,13 @@ body{
 }
 
 .event-card-show h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
 
 .event-card-show p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -138,7 +139,7 @@ body{
 }
 
 .event-card-show-info p {
-  font-size: 15px;
+  font-size: 16px;
   font-family: Nunito;
 }
 
@@ -151,5 +152,5 @@ body{
 }
 
 .btn-message{
-  background-color: #FD7E13;  
+  background-color: #FD7E13;
 }
