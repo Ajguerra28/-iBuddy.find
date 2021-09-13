@@ -9,19 +9,15 @@
   color: aliceblue;
   text-shadow: 1px 1px #487091;
 }
-
 .banner {
   background: linear-gradient(180deg, rgba(41, 163, 215, 0.5) 0%, rgba(253, 126, 19, 0.5) 100%), url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJpZW5kcyUyMGhhbmdpbmclMjBvdXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');
   background-size: cover;
-  // padding: 190px 0px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   height: 500px;
 }
-
 .searchbar{
   margin-bottom: auto;
-  // margin-top: auto ;
   height: 60px;
   background-color: rgba($color: #f9f9f9, $alpha: 0.7);
   border-radius: 30px;
@@ -29,7 +25,6 @@
   font-family: Nunito;
   display: flex;
 }
-
 .search_input{
   color: #353b48;
   border: 0;
@@ -40,7 +35,6 @@
   line-height: 40px;
   transition: width 0.4s linear;
 }
-
 .search_icon {
   justify-content: center;
   margin: 9px;
@@ -48,43 +42,32 @@
   background: none;
   color: #167ffb;
 }
-
 .searchbar:hover .search_input{
   padding: 0 10px;
   width: 450px;
   caret-color:red;
   transition: width 0.4s linear;
   }
-
 .row-home {
   margin: 70px;
   margin-top: 20px;
   padding: 3px;
   text-align: center;
 }
-
 .row-title {
-  margin-left: 105px;
-  margin-bottom: 0;
   font-size: 2.5rem;
-  padding: 3px;
-  margin-top: 30px;
+  padding: 15px 32px;
+  margin: 25px 0px 32px;
+  text-align: center;
 }
-
 h1 {
   font-weight: 900;
 }
-
 h2 {
   margin: 14px;
 }
-
 body {
   background: whitesmoke;
-}
-
-.img-download > img {
-  object-fit: cover;
 }
 
 .typed-js {
