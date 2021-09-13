@@ -12,36 +12,26 @@ body{
    background-color: #f3f5f9;
 }
 
-.wrapper{
+.container{
   display: flex;
   // justify-content: space-between;
 }
 
-.wrapper .sidebar{
+.container .profile-info-card-event{
   width: auto;
   height: auto;
-  padding: 30px 0px;
-  border-radius: 3px;
+  padding: 0px;
+  border-radius: 10px;
   // position: fixed;
 }
 
 
-.wrapper .sidebar ul li{
-  padding: 15px;
-  border-bottom: 1px solid #bdb8d7;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  border-top: 1px solid rgba(255,255,255,0.05);
+
+.container .profile-info-card-event ul li{
+  margin: 15px;
   color: white;
 }    
 
-// .wrapper .sidebar ul li a{
-//   color: #bdb8d7;
-//   display: block;
-// }
-
-.wrapper .sidebar ul li a .fas{
-  width: 25px;
-}
 
 .avatar-event-show {
   width: 90px;
@@ -56,7 +46,7 @@ body{
 }
 
 .sidecard-info {
-  bottom: 44px;
+  bottom: 0px;
   position: relative;
   text-align: center;
 }
@@ -69,17 +59,20 @@ body{
   }
 }
 
-.sidecard-name{
+.sidecard-name{ 
   margin: 0px;
+  font-size: 25px;
+  font-weight: lighter;
 }
 
 .sidecard-email {
-  font-size: 12px;
+  font-size: 15px;
   color: #FEBF89;
 }
 
 .sidebar-card-button {
-  padding-bottom: 20px;
+  padding-top: 20px;
+  justify-content: center;
 }
 
 //////////////
@@ -106,7 +99,8 @@ body{
 // card infor
 .event-card-show {
   overflow: hidden;
-  height: auto;
+  width: 70%;
+  height: 260px;
   background-color: #FFF2E7;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -133,8 +127,13 @@ body{
   margin-top: 10px;
 }
 
-.event-card-show .event-card-show-info {
+.event-card-show-info {
   padding: 16px;
+  position: relative;
+  // bottom: 200px;
+  // right: 150px;
+  margin: 0px;
+
 }
 
 .event-card-show-info p {
@@ -148,8 +147,14 @@ body{
 
 .map-event-show {
   margin-top: 10px;
+  width: 100%;
 }
 
 .btn-message{
   background-color: #FD7E13;  
+}
+
+.map-color-shadow {
+  border-radius: 3px;
+   
 }
