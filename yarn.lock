@@ -4511,7 +4511,7 @@ map-visit@^1.0.0:
 
 mapbox-gl@^2.4.1:
   version "2.4.1"
-  resolved "https://registry.npmjs.org/mapbox-gl/-/mapbox-gl-2.4.1.tgz"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.4.1.tgz#cd17d35bd4262bc6a9e0e49fef165f8f0dbf6fef"
   integrity sha512-iTF5UPm63ojEi91A2lSpM5wDfnttuPXJmJRwD65R4n2mAYoQjjRwXvXIgcxKDnZDpdczF1jIFeS1R+H8jp1NCQ==
   dependencies:
     "@mapbox/geojson-rewind" "^0.5.0"

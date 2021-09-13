@@ -1,4 +1,3 @@
-// Specific CSS for your home-page
 .main-container {
   margin: auto;
   margin-top: -50px;
@@ -70,20 +69,76 @@ h2 {
 body {
   background: whitesmoke;
 }
+
 .typed-js {
   min-height: 33.5px;
   font-family: Nunito;
   font-size: 30px;
 }
-#img-download-upcoming {
-  img {
-    width: 338px;
-    height: 183px;
+
+.fa-user-alt, .fa-map-marker-alt, .card-subtitle, .card-body-home-page {
+  color: #FD7E13;
+}
+
+.card-home-page {
+  a:hover {
+    text-decoration: none;
   }
 }
-.steps_image {
-  img {
-    width: 100vw;
-    height: auto;
+
+.card-body-home-page .centered {
+  transition: transform .2s;
+  &:hover {
+    color: black;
   }
+}
+
+.location .participants {
+  padding: 5px;
+}
+
+.location-event {
+  margin: 0;
+  line-height: 2.3;
+  color: #6c757d;
+}
+
+.event-main-content-name {
+  height:55px;
+}
+
+.card-event {
+   background-color: white;
+
+   .event-name {
+     text-align: left;
+     font-weight: bold;
+   }
+
+   .row {
+     margin: 0;
+   }
+
+   .fa-map-marker-alt {
+     margin: 8px;
+     margin-left: 0;
+   }
+}
+
+.cards {
+  padding: 16px;
+  .card-img-top {
+    border-radius: 10px 10px 0px 0px;
+    height: 200px;
+  }
+}
+
+.card {
+  // background-size: cover;
+  // background-position: center;
+  border-radius: 10px !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  align-items: left;
+  // width: auto;
+  height: 375px;
 }

@@ -116,64 +116,182 @@ users = User.all
 
 event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night out', description:'Party all night long', price: 20.00 , max_people: 3)
 event1.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event1.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/urban.jpg")),
+  filename: 'urban.jpg'
+)
 
-event2 = Event.create!(user: users.sample, name:'Dinner at McDonalds', location:'Av. Padre Cruz, 1600-001 Lisboa', category:'Gastronomy', description:'Let\s eat like an American', price: 10.00, max_people: 4)
+event2 = Event.create!(user: users.sample, name:'Dinner at McDonalds', location:'Av. Padre Cruz, 1600-001 Lisboa', category:'Gastronomy', description:"Let's eat like an American", price: 10.00, max_people: 4)
 event2.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event2.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/mcdonalds.png")),
+  filename: 'mcdonalds'
+)
 
-event3 = Event.create!(user: users.sample, name:'Diving in Sintra', location:'Avenida Alfredo Coelho, Colares, Sintra', category:'Sports', description:'Our planet it\s 71% water.', price: 50.00, max_people: 2)
+event3 = Event.create!(user: users.sample, name:'Diving in Sintra', location:'Avenida Alfredo Coelho, Colares, Sintra', category:'Sports', description:"Our planet it's 71% water.", price: 50.00, max_people: 2)
 event3.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event3.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/diving.jpg")),
+  filename: 'diving'
+)
 
-event4 = Event.create!(user: users.sample, name:'Trip to Porto', location:'Av. dos Aliados, 4000-064 Porto', category:'Travel', description:'Join me and I will show you Porto and how to speak. first lesson P*** que pariu, cara***', price: 70, max_people: 2)
+event4 = Event.create!(user: users.sample, name:'Trip to Porto', location:'Av. dos Aliados, 4000-064 Porto', category:'Travel', description:"Join me to the most amazing trip of your life! Let's enjoy porto together!", price: 70, max_people: 2)
 event4.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event4.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/porto.jpg")),
+  filename: 'porto'
+)
 
-event5 = Event.create!(user: users.sample, name:'Pole dance 1ª time', location:'Rua do Moreira, 4000-347 Porto', category:'Experiences', description:'Just a fancy sexy dance', price: 15.00, max_people:3)
+event5 = Event.create!(user: users.sample, name:'Pole dance for the first time', location:'Rua do Moreira, 4000-347 Porto', category:'Experiences', description:'Just a fancy sexy dance', price: 15.00, max_people:3)
 event5.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event5.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/poledance.jpg")),
+  filename: 'pole dance'
+)
 
-event6 = Event.create!(user: users.sample, name:'Rock in Rio', location:'Av. Dr. Arlindo Vicente, Lisboa', category:'Events', description:'rock \'n\' roll o\'clock ', price: 80.00, max_people: 10)
+event6 = Event.create!(user: users.sample, name:'Rock in Rio', location:'Av. Dr. Arlindo Vicente, Lisboa', category:'Events', description:"Rock 'n Roll O'CLOCK!", price: 80.00, max_people: 10)
 event6.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event6.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/rockinrio.jpg")),
+  filename: 'rock in rio'
+)
 
-event7 = Event.create!(user: users.sample, name:'Visit MAAT', location:'Av. Brasília, 1300-598 Lisboa', category:'Culture', description:'Museum with river view', price: 5.00, max_people:4)
+event7 = Event.create!(user: users.sample, name:'Art Gallery in Lisbon', location:'Av. Brasília, 1300-598 Lisboa', category:'Culture', description:'How about we discuss Da Vinci style?', price: 5.00, max_people:4)
 event7.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event7.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/arte.jpg")),
+  filename: 'arte'
+)
 
-event8 = Event.create!(user: users.sample, name:'New in Lisbon', location:'Praça do Comércio, 1100-148 Lisboa', category:'Meet', description:'just show me the city pleaseeee', price:2.00, max_people:5)
+event8 = Event.create!(user: users.sample, name:'Web Summit 2021', location:'Praça do Comércio, 1100-148 Lisboa', category:'Meet', description:"Let's go to the most outstanding technology event of the world!", price:2.00, max_people:5)
 event8.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event8.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/websummit.jpg")),
+  filename: 'web summit'
+)
 
 event9 = Event.create!(user: users.sample, name:'Climbing', location:'Rua de Angola, 2620-036 Olival Basto', category:'Sports', description:'As someone said  is natural to human beings. We walk, run and climb', price: 10.00, max_people:2)
 event9.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event9.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/climbing.jpg")),
+  filename: 'climbing'
+)
 
-event10 = Event.create!(user: users.sample, name:'Run to Cascais', location:'Alameda dos Combatentes da Grande Guerra, 2750-642 Cascais', category:'Sports', description:'Run Forest RUNNNNNNN', price: 0, max_people:4)
+event10 = Event.create!(user: users.sample, name:'Crossfit Training', location:'Alameda dos Combatentes da Grande Guerra, 2750-642 Cascais', category:'Sports', description:"Test yourself to the limit!", price: 0, max_people:4)
 event10.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event10.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/crossfit.jpg")),
+  filename: 'crossfit'
+)
 
 event11 = Event.create!(user: users.sample, name:'Fancy Dinner', location:'Av. Marginal 0, 2775-604 Carcavelos', category:'Gastronomy', description:'A dinner like monaco but in Oeiras', price:40.00, max_people:3)
 event11.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event11.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/gastronomy1.jpg")),
+  filename: 'steak'
+)
 
-event12 = Event.create!(user: users.sample, name:'Felling Lonely :(', location:'R. da Rosa, 1200-385 Lisboa', category:'Meet', description:'just a boy looking for some fun ', price:15.00, max_people:2)
+event12 = Event.create!(user: users.sample, name:'Felling Lonely :(', location:'R. da Rosa, 1200-385 Lisboa', category:'Meet', description:'Just a boy looking for some fun ', price:15.00, max_people:2)
 event12.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event12.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/lonely.jpg")),
+  filename: 'lonely'
+)
 
-event13 = Event.create!(user: users.sample, name:'Alive festival', location:'Passeio Marítimo de Algés, Algés', category:'Events', description:'A MEGA FESTIVAL', price:100.00, max_people:5)
+
+event13 = Event.create!(user: users.sample, name:'Fado in Lisbon', location:'Passeio Marítimo de Algés, Algés', category:'Events', description:"Enjoy some amazing, lovely and classic portuguese Fado.", price:100.00, max_people:5)
 event13.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event13.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/fado.jpg")),
+  filename: 'fado'
+)
 
 event14 = Event.create!(user: users.sample, name:'Visit museum', location:'Alameda dos Oceanos, 1990-155 Lisboa', category:'Culture', description:'Culture time', price:3.00, max_people:3)
 event14.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event14.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/arte.jpg")),
+  filename: 'arte'
+)
 
-event15 = Event.create!(user: users.sample, name:'Let/s go to Bairro', location:'Praça Luís de Camões, 1200-283 Lisboa', category:'Night out', description:'Party all night long (COVID test should be negative) and alcohol VERY positive', price:10.00, max_people:5)
+event15 = Event.create!(user: users.sample, name:"Let's go to Bairro", location:'Praça Luís de Camões, 1200-283 Lisboa', category:'Night out', description:'Party all night long. Must test negative to Covid-19 and positive to getting drunk!', price:10.00, max_people:5)
 event15.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event15.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/nightclub.jpg")),
+  filename: 'nightclub'
+)
 
 event16 = Event.create!(user: users.sample, name:'Paris trip', location:'Paris', category:'Travel', description:'Mona lisa, baguetes and molin rouge', price:90.00, max_people:4)
 event16.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event16.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/paris.jpg")),
+  filename: 'paris'
+)
 
-event17 = Event.create!(user: users.sample, name:'Algarve holidays', location:'Av. Francisco Sá Carneiro, 8125-141 Quarteira', category:'Travel', description:'Sun, Avencs and Camones', price:70.00, max_people:8)
+event17 = Event.create!(user: users.sample, name:'Venice holidays', location:'Av. Francisco Sá Carneiro, 8125-141 Quarteira', category:'Travel', description:'Pizza, pasta, Super Mario & Luigi!', price:70.00, max_people:8)
 event17.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event17.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/venice.jpg")),
+  filename: 'venice'
+)
 
 event18 = Event.create!(user: users.sample, name:'Sky dive', location:'N254, 7005-797 Évora', category:'Experiences', description:'May the gravity be with you', price:100.00, max_people: 1)
 event18.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event18.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/parachute.png")),
+  filename: 'parachute'
+)
 
-event19 = Event.create!(user: users.sample, name:'Relax Drink', location:'Av. Ribeira das Naus, Lisboa', category:'Night out', description:'A good drink, a good conversation and a good sunset', price:10.00, max_people:5)
+event19 = Event.create!(user: users.sample, name:'The G.O.A.T Ronaldo!', location:'Av. Ribeira das Naus, Lisboa', category:'Events', description:'A weekend in Manchester to watch the great of all time, Cristiano Ronaldo!', price:10.00, max_people:5)
 event19.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event19.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/soccergame.jpg")),
+  filename: 'soccergame'
+)
 
-event20 = Event.create!(user: users.sample, name:'Girls just wanna have fun ;)', location:'R. da Cintura do Porto de Lisboa, 1200-109 Lisboa', category:'Night out', description:'the name says it all', price:20.00, max_people:5)
+event20 = Event.create!(user: users.sample, name:'Girls just wanna have fun ;)', location:'R. da Cintura do Porto de Lisboa, 1200-109 Lisboa', category:'Night out', description:'The name says it all. Join us if you have interest!', price:20.00, max_people:5)
 event20.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
+event20.photo.attach(
+  io: File.open(Rails.root.join("app/assets/images/category_img/partygirls.jpg")),
+  filename: 'partygirls'
+)
 
-puts "----------------------------------------------"
-puts "---------- UHUH new Events -------------------"
-puts "----------------------------------------------"
+puts "*************,,*/(((((//,,*(#%%%%%%%%%%%%%%%#(*,,,****************************************************,*/(((((((((/((((////****/((##%%%%%%
+,*************,,//((((((//,,*(%%%%%%%%%%%%%%%%%##/*****************************************************,,*/(///(//////****//((##%%%%%%%%%%%
+,************,,*/(((((((//***/#%%%%%%%%%%%%%%%%%%%#(/***************************************************,*//////////*//((#%%%%%%%%%%%%%%%%%
+,***********,,*////////////***/##%%%%%%%%%%%%%%%%%%%##(*,***********************************************,,*////////(###%%%%%%%%%%%%%%%%%%%%
+,**********,,,*/*******//////**/(#%%%%%%%%%%%%%%%%%%%%%#(/**********************************************,,,***/(##%%%%%%%%%%%%%%%%%%%%%%%%%
+,*********,,,,*************///***/(#%%%%%%%%%%%%%%%%%%%%%%#(/***********************************,****,****/((#%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+,*********,,,***************//****/(##%%%%%%%%%%%%%%%%%%%%%%##//**************//////////////////////((#####%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(
+,********,,,,***********************/(#%%%%%%%%%%%%%%%%%%%%%%%##################%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##(/
+,*******,..,***********************,,*/##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%###((//
+,*******,.,,***********************,,,,*(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##(//**//
+,******,.,,,************************,,,,*/(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(//*******
+,*****,,,,,********,***,,,,,,,,,,,,*,,,,,,*/(######%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##(/**********
+,*****,..,*******,,,,,,,,,,,,,,,,,,,,,,*,,,,*///((#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%###(/************
+,*****,,,*******,,,,,*,,,,,,,,,,,,,,,,,****,,,*/(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#######(//**************
+,****,.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,**,,,/(%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#((//******************
+,***,..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..,,,,,,,*(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(/*******************
+,**,,.,,,,,,,,,,,,,,,,,,,,,,,,,,.......,,,,,,/#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#####%%%%%%%%%%%%%%%%#(/******************
+,**,..,,,,,,,,,,,,,,,,,,,,,,,,,......,,,*,,,*(#%%%%%%%%##(((/(##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##(((/*/((#%%%%%%%%%%%%%%#(/*****************
+,*,..,,,,,,,,,,,,,,,,,,,,,,,,,,,.....,,**,,*/#%%%%%%%##((((*,**/#%%%%%%%%%%%%%%%%%%%%%%%%%%%%##((##/,,,*(#%%%%%%%%%%%%%%#(*****************
+.*,.,,,**,,,,,,,,,,,,,,,,,,,,,,,,,,*****,,,/(%%%%%%%%#(//(#/,..*/#%%%%%%%%%%%%%%%%%%%%%%%%%%%#(//(#/,..,/(#%%%%%%%%%%%%%%#/*****///////////
+.,..,,,,,,,,,,,,,,,,,,,,,,,,,,*,,*******,,,(#%%%%%%%%#(*,,,....,/#%%%%%%%%%%%%%%%%%%%%%%%%%%%#(*,,,....,/(#%%%%%%%%%%%%%%#(*,**////////////
+.,..,,,,,,,,,...........,,,,,,*,********,,*(#%%%%%%%%%#(/*,,...,/#%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(/*,,..,*/##%%%%%%%%%%%%%%%#(***////////////
+...,,,,,,,................,,*,**********,,/#%%%%%%%%%%%%#((////((#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##((///(#%%%%%%%%%%%%%%%%%%(/**////////////
+ ..,,,,,,.................,,,**********,,*(#%%%%%%%%%%%%%%%%%%#%%%%%%%%#((///((#%%%%%%%%%%%%%%%%%%%%%#%%%%%%%%%%%%%%%%%%%%%#/**////////////
+.,,,,,,,,.................,,***********,,/(####%%%%%%%%%%%%%%%%%%%%%%%%#(/*,,,*(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(/*////////////
+.,***,,,,,,..............,,,**********,..,***//((##%%%%%%%%%%%%%%%%%%%%%%%##((##%%%%%%%%%%%%%%%%%%%%%%%%%##(((((((((###%%%%%#/**///////////
+.*****,,,,,,,,,,,,,,,,,,,*************,..,*******/(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##///*//////((#%%%%%#(**///////////
+.****************/******/***////*****,.,*///////**/#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(////////////(#%%%%%#/**//////////
+.***********************/////*******,..,*//////////(#%%%%%%%%%%%%%%%%%%%%##########%%%%%%%%%%%%%%%%%%%%#(///////////*/(#%%%%%#(***/////////
+.************************///********,..,*//////////#%%%%%%%%%%%%%%%%%%#(//*****///(((##%%%%%%%%%%%%%%%%#(///////////**/##%%%%##/***////////
+.***********************************,.,,***///////(#%%%%%%%%%%%%%%%%#(/*,,,*//((((////(#%%%%%%%%%%%%%%%#((////////////(#%%%%%%#(*********//
+,***********,,,*,,*,,**************,,,*//******//(#%%%%%%%%%%%%%%%%%#(*,,*/(((#####(((((#%%%%%%%%%%%%%%%##///////////(#%%%%%%%%#(***///////
+,*************,,**,,,************,,,,,/(##((((####%%%%%%%%%%%%%%%%%%%(/**/(((#((((#((//(#%%%%%%%%%%%%%%%%%#(((((((((##%%%%%%%%%%#/**///////
+,******************************,,,,,,,*(#%#%%%%%%%%%%%%%%%%%%%%%%%%%%#(**/((#(#(((#((//(#%%%%%%%%%%%%%%%%%%%%%%%#%#%%%%%%%%%%%%%#(**///////
+,*************,**************,****,,,,,/(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(/*/((((#((((///(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(/*///////
+,*************************************,*/#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##(////////////(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#/**/////*
+,******////****///////////////////////***/#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%####(((((((###%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(********
+.,*,****///////////////////////////////***/#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#(/*******
+.,,,,*****//////////////////////////*******(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%##(*******
+.,,,,,,***********/////////////////********/(#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%(*******"

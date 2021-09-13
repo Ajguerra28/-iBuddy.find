@@ -28,6 +28,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.event_days.build
     # 3.times { @event.event_days.build }
     authorize @event
   end
@@ -60,7 +61,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(
-      :location, :name, :category, :description, :max_people, :price, :location,
+      :location, :name, :category, :description, :max_people, :price, :location, :photo,
       event_days_attributes: [:date]
     )
   end
