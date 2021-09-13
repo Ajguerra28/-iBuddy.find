@@ -1,106 +1,4 @@
 // Specific CSS for your home-page
-
-
-// Testing
-
-// .container {
-//   width: 100%;
-//   height: 100vh;
-//   color: #eee;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .calendar {
-//   width: 45rem;
-//   height: 52rem;
-//   background-color: #222227;
-//   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-// }
-
-// .month {
-//   width: 100%;
-//   height: 12rem;
-//   background-color: #167e56;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 0 2rem;
-//   text-align: center;
-//   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-// }
-
-// .month i {
-//   font-size: 2.5rem;
-//   cursor: pointer;
-// }
-
-// .month h1 {
-//   font-size: 3rem;
-//   font-weight: 400;
-//   text-transform: uppercase;
-//   letter-spacing: 0.2rem;
-//   margin-bottom: 1rem;
-// }
-
-// .month p {
-//   font-size: 1.6rem;
-// }
-
-// .weekdays {
-//   width: 100%;
-//   height: 5rem;
-//   padding: 0 0.4rem;
-//   display: flex;
-//   align-items: center;
-// }
-
-// .weekdays div {
-//   font-size: 1.5rem;
-//   font-weight: 400;
-//   letter-spacing: 0.1rem;
-//   width: calc(44.2rem / 7);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-// }
-
-// .days {
-//   width: 100%;
-//   display: flex;
-//   flex-wrap: wrap;
-//   padding: 0.2rem;
-// }
-
-// .days div {
-//   font-size: 1.4rem;
-//   margin: 0.3rem;
-//   width: calc(40.2rem / 7);
-//   height: 5rem;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-//   transition: background-color 0.2s;
-// }
-
-// .days div:hover:not(.today) {
-//   background-color: #262626;
-//   border: 0.2rem solid #777;
-//   cursor: pointer;
-// }
-
-// .prev-date,
-// .next-date {
-//   opacity: 0.5;
-// }
-
-// .today {
-//   background-color: #167e56;
-// }
-// Specific CSS for your home-page
 .main-container {
   margin: auto;
   margin-top: -50px;
@@ -112,7 +10,6 @@
   color: aliceblue;
   text-shadow: 1px 1px #487091;
 }
-
 .banner {
   background: linear-gradient(180deg, rgba(41, 163, 215, 0.5) 0%, rgba(253, 126, 19, 0.5) 100%), url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJpZW5kcyUyMGhhbmdpbmclMjBvdXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80');
   background-size: cover;
@@ -121,7 +18,6 @@
   background-position: 50% 50%;
   height: 500px;
 }
-
 .searchbar{
   margin-bottom: auto;
   // margin-top: auto ;
@@ -132,7 +28,6 @@
   font-family: Nunito;
   display: flex;
 }
-
 .search_input{
   color: #353b48;
   border: 0;
@@ -143,7 +38,6 @@
   line-height: 40px;
   transition: width 0.4s linear;
 }
-
 .search_icon {
   justify-content: center;
   margin: 9px;
@@ -151,49 +45,38 @@
   background: none;
   color: #167ffb;
 }
-
 .searchbar:hover .search_input{
   padding: 0 10px;
   width: 450px;
   caret-color:red;
   transition: width 0.4s linear;
   }
-
 .row-home {
   margin: 70px;
   margin-top: 20px;
   padding: 3px;
   text-align: center;
 }
-
 .row-title {
-  // margin-left: 105px;
-  // margin-bottom: 0;
   font-size: 2.5rem;
   padding: 15px 32px;
   margin: 25px 0px 32px;
-  // margin-top: 30px;
   text-align: center;
 }
-
 h1 {
   font-weight: 900;
 }
-
 h2 {
   margin: 14px;
 }
-
 body {
   background: whitesmoke;
 }
-
 .typed-js {
   min-height: 33.5px;
   font-family: Nunito;
   font-size: 30px;
 }
-
 #img-download-upcoming {
   img {
     width: 338px;

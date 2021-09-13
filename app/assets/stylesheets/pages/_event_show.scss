@@ -42,25 +42,21 @@ body{
 .wrapper .sidebar ul li a .fas{
   width: 25px;
 }
-
 .avatar-event-show {
   width: 100px;
   border-radius: 50%;
 
 }
-
 .sidebar-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .sidecard-info {
   bottom: 44px;
   position: relative;
   text-align: center;
 }
-
 .sidecard-info2 {
   padding-left: 30px;
   padding-right: 30px;
@@ -73,12 +69,10 @@ body{
 .sidecard-name{
   margin: 0px;
 }
-
 .sidecard-email {
   font-size: 16px;
   color: #FEBF89;
 }
-
 .sidebar-card-button {
   padding-bottom: 20px;
 }
@@ -103,8 +97,7 @@ body{
 
 }
 
-
-// card infor
+// card information
 .event-card-show {
   overflow: hidden;
   height: auto;
@@ -113,19 +106,16 @@ body{
   display: flex;
   align-items: center;
 }
-
 .event-card-show img {
   height: 100%;
   width: 220px;
   object-fit: cover;
 }
-
 .event-card-show h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
-
 .event-card-show p {
   font-size: 14px;
   line-height: 1.4;
@@ -133,24 +123,19 @@ body{
   margin-bottom: 0;
   margin-top: 10px;
 }
-
 .event-card-show .event-card-show-info {
   padding: 16px;
 }
-
 .event-card-show-info p {
   font-size: 16px;
   font-family: Nunito;
 }
-
 .event-card-show-info h5 {
   font-size: 25px;
 }
-
 .map-event-show {
   margin-top: 10px;
 }
-
 .btn-message{
   background-color: #FD7E13;
 }
