@@ -1,35 +1,35 @@
 <div class="back-show"><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %></div>
 
-<div class="container"> 
-  
+<div class="container">
+
   <div class ="col-4 rounded"> <!--col profile -->
-    
+
     <div class="profile-info-card-event">
       <%# <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap"> %>
       <div class="profile-info-card-event-info">
-        <img class="avatar-event-show" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+        <%= cl_image_tag(@event.user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show') %>
         <h5 class="profile-info-card-event-name"><%= @event.user.name %></h5>
         <p class="profile-info-card-event-email"><i class="fas fa-envelope"></i>  <%= @event.user.email %></p>
       </div>
-     
+
       <div class="profile-info-card-event-info2">
         <p><i class="fas fa-birthday-cake"></i>  <%= ((Date.today - @event.user.date_of_birth )/365).to_i%> y</p>
         <p><i class="fas fa-pen-square"></i>  <%= @event.user.description %></p>
         <p><i class="fas fa-venus-mars"></i>  <%= @event.user.gender %></p>
       </div>
-      
+
       <div class="profile-info-card-event-card-button">
         <button type="button" class="btn btn-warning">Message</button>
         <button type="button" class="btn btn-warning">Review</button>
       </div>
     </div>
-  
+
   </div> <!--col profile -->
 
   <div class ="col-8">
-    
+
     <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%= cl_image_tag  "#{@event.photo.key}", crop: :fill, class: "card-img-top" %>
       <div class="card-trip-infos">
       <div>
         <h5><%= @event.name %></h5>
@@ -72,7 +72,7 @@
       <% end %>
     </div>
   </div>
- 
+
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
@@ -86,6 +86,3 @@
   </div>
 </div>
 </div>
-
-
-
