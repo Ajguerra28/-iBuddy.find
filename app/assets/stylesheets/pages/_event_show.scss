@@ -10,7 +10,7 @@
 
 .profile-info-card-event{
   width: auto;
-  height: 100%;
+  height: 100vh;
   padding: 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
@@ -18,10 +18,8 @@
 
 
 .avatar-event-show {
-  width: 100px;
   border-radius: 50%;
   margin-top:15px;
-  
 }
 
 .profile-info-card-event-info {
@@ -39,7 +37,7 @@
   }
 }
 
-.profile-info-card-event-name{ 
+.profile-info-card-event-name{
   margin-top:15px;
   font-size: 25px;
   font-weight: lighter;
@@ -108,7 +106,7 @@
 }
 
 .event-card-btn {
-  
+
 }
 
 #sweet-alert-demo {

@@ -13,6 +13,7 @@ import { initTyped } from '../plugins/init_typejs';
 import { initCarousel } from '../plugins/init_carousel';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { addEvent } from '../plugins/init_addevent';
+// import { initChatroomCable } from '../channels/chatroom_channel';
 
 Rails.start()
 Turbolinks.start()
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initTyped();
   initCarousel();
   initMapbox();
+  // initChatroomCable();
 });
