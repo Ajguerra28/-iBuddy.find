@@ -1,4 +1,4 @@
-<div><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %></div>
+<div class="back-show"><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %></div>
 
 <div class="container"> 
   
@@ -8,7 +8,7 @@
       <%# <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap"> %>
       <div class="profile-info-card-event-info">
         <img class="avatar-event-show" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-        <p class="profile-info-card-event-name"><strong><%= @event.user.name %></strong></p>
+        <h5 class="profile-info-card-event-name"><%= @event.user.name %></h5>
         <p class="profile-info-card-event-email"><i class="fas fa-envelope"></i>  <%= @event.user.email %></p>
       </div>
      
@@ -54,24 +54,24 @@
       </div>
     </div>
 
-    <div class="map-event-show">
-      <div class="card-trip-infos">
-        <h5>Map </h5>
-        <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %></p>
-      </div>
-      <div>
-        <% if @event.latitude.present? && @event.longitude.present?  %>
-          <div id="map"
-            style="width: 100%; height: 300px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
-        <% end %>
-      </div>
-    </div>
 
   </div>
 
+  <div class="map-event-show">
+    <div class="card-trip-infos">
+      <h5>Map </h5>
+      <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %></p>
+    </div>
+    <div>
+      <% if @event.latitude.present? && @event.longitude.present?  %>
+        <div class="show-mp" id="map"
+          style="width: 100%; height: 300px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      <% end %>
+    </div>
+  </div>
  
 <div class="footer">
   <div class="footer-links">
