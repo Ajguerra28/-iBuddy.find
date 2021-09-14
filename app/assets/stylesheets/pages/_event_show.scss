@@ -2,6 +2,11 @@
   margin: 0px 0px 5px 25px;
   text-decoration: none;
   color: black;
+  font-family: Nunito;
+}
+
+body{
+   background-color: #f3f5f9;
 }
 
 
@@ -13,10 +18,10 @@
 
 .profile-info-card-event{
   width: auto;
+
   height: 100%;
   padding: 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
 }
 
 
@@ -48,6 +53,7 @@
   font-weight: lighter;
 }
 
+
 .profile-info-card-event-email {
   font-size: 15px;
   color: #FEBF89;
@@ -66,6 +72,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+
 .card-trip > img {
   height: 250px;
   width: 100%;
@@ -83,7 +90,6 @@
   opacity: .7;
   margin-top: 10px;
 }
-
 
 .card-trip .card-trip-infos {
   padding: 16px;

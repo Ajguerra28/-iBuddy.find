@@ -8,9 +8,15 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <%= stylesheet_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <meta property="og:image" content="https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JvdXAlMjBvZiUyMGZyaWVuZHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"/>
+    <meta property="og:title" content="Your Title"/>
+    <meta property="og:description" content="A full description of the page."/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
   </head>
 
   <body>
@@ -18,5 +24,35 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+      <section>
+        <div class="wave wave1">
+          <div class="footer-basic">
+            <footer>
+              <div class="social">
+                <a href="https://www.instagram.com/ajguerra28/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/marianadkobayashi/" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/david_r_luis/" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+              <p class="copyright">iBuddyFind © 2021</p>
+            </footer>
+          </div>
+          <%# <div class="d-flex">
+            <h1>buttons here!</h1>
+
+          </div> %>
+        </div>
+        <div class="wave wave2">
+        </div>
+        <div class="wave wave3">
+        </div>
+        <div class="wave wave4">
+        </div>
+      </section>
   </body>
 </html>
