@@ -7,22 +7,21 @@
             <div class="mesgs">
               <div class="msg_history">
                 <div class="incoming_msg">
-                  <div class="incoming_msg_img">
-                    <%= cl_image_tag current_user.avatar.key, crop: :fill %>
-                  </div>
                   <div class="received_msg">
                     <div class="received_withd_msg">
                       <% @chatroom.messages.each do |message| %>
                        <% if message.user == current_user %>
-                            <%= message.user.name %>
-                            <p><%= message.content %> </p>
-                            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small>
-                        <% else %>
+                        <%= cl_image_tag current_user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
+                        <%= message.user.name %>
+                        <p><%= message.content %> </p>
+                        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
+                      <% else %>
                         <div class="outgoing_msg">
                           <div class="sent_msg">
                             <%= message.user.name %>
+                            <%= cl_image_tag message.user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
                             <p><%= message.content %> </p>
-                            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small>
+                            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
                           </div>
                         </div>
                       <% end %>
@@ -30,44 +29,18 @@
                     </div>
                   </div>
                 </div>
-                <div class="outgoing_msg">
-                  <div class="sent_msg">
-                  </div>
-                </div>
-                <div class="incoming_msg">
-                  <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                  <div class="received_msg">
-
-                  </div>
-                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>"></div>
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+          <div id="button-chatroom">
+            <button class="send-message">Send message</button>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% @chatroom.messages.each do |message| %>
-        <%# <div class="message-container" id="message-<%= message.id %>
-          <%# <i class="author">
-            <span><%= message.user.name %>
-            <%# </span> %>
-            <%# <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")</small> %>
-          <%# </i> %>
-          <%# <p><%= message.content</p> %>
-        <%# </div>  %>
-      <% end %>
-    </div>
-    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-    <%# <%= f.button :submit, class:"button_chatroom" %>
-
-    <div id="button-chatroom">
-      <button class="send-message">Send message</button>
-    </div>
-
-    <% end %>
-    <%# <div class="credit text-center">
-      <a href="https://rakeshmandal.com" target="_blank">By RaKesh Mandal</a>
-    </div> %>
-
   </div>
 </div>
