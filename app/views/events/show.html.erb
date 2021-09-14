@@ -1,67 +1,91 @@
-<div class="wrapper">
-  <nav class ="col-3">
-    <%# <div class = "nav nav-sidebar"> %>
-    <div class="sidebar-card">
-      <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap">
-      <div class="sidecard-info">
+<div class="back-show"><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %></div>
+
+<div class="container"> 
+  
+  <div class ="col-4 rounded"> <!--col profile -->
+    
+    <div class="profile-info-card-event">
+      <%# <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap"> %>
+      <div class="profile-info-card-event-info">
         <img class="avatar-event-show" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-        <p class="sidecard-name"><strong><%= @event.user.name %></strong></p>
-        <p class="sidecard-email"><i class="fas fa-envelope"></i>  <%= @event.user.email %></p>
+        <h5 class="profile-info-card-event-name"><%= @event.user.name %></h5>
+        <p class="profile-info-card-event-email"><i class="fas fa-envelope"></i>  <%= @event.user.email %></p>
       </div>
-      <div class="sidebar-card-button">
-        <button type="button" class="btn btn-warning">Message</button>
-        <button type="button" class="btn btn-warning">Review</button>
-      </div>
-      <div class="sidecard-info2">
+     
+      <div class="profile-info-card-event-info2">
         <p><i class="fas fa-birthday-cake"></i>  <%= ((Date.today - @event.user.date_of_birth )/365).to_i%> y</p>
         <p><i class="fas fa-pen-square"></i>  <%= @event.user.description %></p>
         <p><i class="fas fa-venus-mars"></i>  <%= @event.user.gender %></p>
       </div>
+      
+      <div class="profile-info-card-event-card-button">
+        <button type="button" class="btn btn-warning">Message</button>
+        <button type="button" class="btn btn-warning">Review</button>
+      </div>
     </div>
-  </nav>
+  
+  </div> <!--col profile -->
 
-  <div class="show-content col-9">
-    <h1><%= @event.name %></h1>
-    <div><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %>
-  </div>
-
-
-<div class="event-card-show">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="event-card-show-info">
-    <h5>Event Information:</h5>
-    <p><i class="far fa-calendar-alt"></i>  <%= @event.day.date %></p>
-    <p><i class="fas fa-pen-square"></i>  <%= @event.description %></p>
-    <p><i class="fas fa-glass-cheers "></i>  <%= @event.category %></p>
-    <p><i class="fas fa-euro-sign"></i>  <%= @event.price %></p>
-    <p><i class="fas fa-users"></i>  <span id="max_people"><%= @event.people_left %></span></p>
-    <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %></p>
-  </div>
-  <div class="event-card-show-info ml-auto mr-3 p-3">
-  <% if @event.user != current_user %>
-      <% if @event.day.booked_by?(current_user) %>
-        <span>It seems you've already joined this event!</span>
-      <% elsif !policy(@event).create_booking? %>
-        <span>Too late! The event is already full.</span>
-      <% else %>
-        <%= simple_form_for [@event.day, @booking] do |f| %>
-          <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-    <div class="map-event-show">
-      <h1>Map </h1>
+  <div class ="col-8">
+    
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
       <div>
-        <% if @event.latitude.present? && @event.longitude.present?  %>
-          <div id="map"
-            style="width: 100%; height: 300px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+        <h5><%= @event.name %></h5>
+        <p><i class="fas fa-pen-square"></i>  <%= @event.description %></p>
+        <p><i class="far fa-calendar-alt"></i>  <%= @event.day.date %></p>
+        <p><i class="fas fa-glass-cheers "></i>  <%= @event.category %></p>
+        <p><i class="fas fa-euro-sign"></i>  <%= @event.price %></p>
+        <p><i class="fas fa-users"></i>  <span id="max_people"><%= @event.people_left %>
+      </div>
+      <div class="event-card-btn">
+        <% if @event.user != current_user %>
+          <% if @event.day.booked_by?(current_user) %>
+            <span>It seems you've already joined this event!</span>
+          <% elsif !policy(@event).create_booking? %>
+            <span>Too late! The event is already full.</span>
+          <% else %>
+            <%= simple_form_for [@event.day, @booking] do |f| %>
+              <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
+
+
+  </div>
+
+  <div class="map-event-show">
+    <div class="card-trip-infos">
+      <h5>Map </h5>
+      <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %></p>
+    </div>
+    <div>
+      <% if @event.latitude.present? && @event.longitude.present?  %>
+        <div class="show-mp" id="map"
+          style="width: 100%; height: 300px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      <% end %>
+    </div>
+  </div>
+ 
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
   </div>
 </div>
+</div>
+
+
+
