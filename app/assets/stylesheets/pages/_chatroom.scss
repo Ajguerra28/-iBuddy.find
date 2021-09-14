@@ -57,6 +57,11 @@ img {max-width: 100%;}
     display: inline-block;
     width: 6%;
   }
+
+  .incoming_msg_img > img {
+    border-radius: 50%;
+  }
+
   .received_msg {
     display: inline-block;
     padding: 0 0 0 10px;
@@ -160,7 +165,7 @@ img {max-width: 100%;}
 @import url('https://fonts.googleapis.com/css?family=Roboto:900');
 
 $bg: #3c3c3c;
-$white: #fff;
+$white: #52B2BF;
 $black: #202121;
 
 @mixin transition($property: all, $duration: 0.5s, $ease: cubic-bezier(0.65,-0.25,0.25, 1.95)) {
