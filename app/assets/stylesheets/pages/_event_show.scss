@@ -1,12 +1,8 @@
+
 .back-show p {
   margin: 0px 0px 5px 25px;
   text-decoration: none;
   color: black;
-  font-family: Nunito;
-}
-
-body{
-   background-color: #f3f5f9;
 }
 
 
@@ -18,10 +14,10 @@ body{
 
 .profile-info-card-event{
   width: auto;
-
   height: 100%;
   padding: 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
 
 
@@ -53,7 +49,6 @@ body{
   font-weight: lighter;
 }
 
-
 .profile-info-card-event-email {
   font-size: 15px;
   color: #FEBF89;
@@ -62,8 +57,18 @@ body{
 .profile-info-card-event-card-button {
   padding-top: 20px;
   text-align: center;
+  font-size: 16px;
+  color: white !important;
 }
 
+#message{
+  color: white !important;
+  font-size: 16px !important;
+}
+#review {
+  color: white !important;
+  font-size: 16px !important;
+}
 //////////////////////////////// CARD-SHOW
 
 .card-trip {
@@ -71,7 +76,6 @@ body{
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
 
 .card-trip > img {
   height: 250px;
@@ -91,6 +95,7 @@ body{
   margin-top: 10px;
 }
 
+
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
@@ -108,6 +113,11 @@ body{
 
 .event-card-btn {
   
+}
+
+#sweet-alert-demo {
+  color: white !important;
+  font-size: 16px !important;
 }
 
 ///////////////////////////// FOOTER
