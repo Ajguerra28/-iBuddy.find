@@ -49,9 +49,8 @@
   transition: width 0.4s linear;
   }
 .row-home {
-  margin: 70px;
-  margin-top: 20px;
-  padding: 3px;
+  margin: 20px 200px 10px 200px;
+  padding: 15px;
   text-align: center;
 }
 .row-title {
@@ -103,6 +102,12 @@ body {
   color: #6c757d;
 }
 
+.location-event.home {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 .event-main-content-name {
   height:55px;
 }
@@ -141,4 +146,11 @@ body {
   align-items: left;
   // width: auto;
   height: 375px;
+}
+
+.steps_image {
+    img { height: auto;
+    width: 100%;
+    text-align: center;
+    }
 }
