@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_event, only: %i[show]
 
   def show
-    
   end
 
   def index
@@ -13,7 +12,7 @@ class UsersController < ApplicationController
 
   def set_event
     @user = User.find(params[:id])
-    @events = Event.where(owner: current_user)
+    @events = Event.where(user: current_user)
     authorize @user
   end
 end

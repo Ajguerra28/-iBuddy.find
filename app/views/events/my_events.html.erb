@@ -1,0 +1,120 @@
+<div class="back-show"><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %></div>
+
+<div class="container d-flex justify-content-between"> 
+  
+  <div class ="col-4 rounded"> <!--col profile -->
+
+    <div class="profile-info-card-event">
+      <%# <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap"> %>
+      <div class="profile-info-card-event-info">
+        <%= cl_image_tag(current_user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show') %>
+        <h5 class="profile-info-card-event-name"><%= current_user.name %></h5>
+        <p class="profile-info-card-event-email"><i class="fas fa-envelope"></i>  <%= current_user.email %></p>
+      </div>
+
+      <div class="profile-info-card-event-info2">
+        <p><i class="fas fa-birthday-cake"></i>  <%= ((Date.today - current_user.date_of_birth )/365).to_i%> y</p>
+        <p><i class="fas fa-pen-square"></i>  <%= current_user.description %></p>
+        <p><i class="fas fa-venus-mars"></i>  <%= current_user.gender %></p>
+      </div>
+      
+      <div class="d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+        <button type="button" id="message" class="btn btn-warning">Message</button>
+        <button type="button" id ="review"class="btn btn-warning">Review</button>
+      </div>
+      
+
+    </div>
+  </div> <!--col profile -->
+
+
+
+  <div class="col-8"> <!--col event -->
+    
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'London')">My Events</button>
+      <button class="tablinks" onclick="openCity(event, 'Paris')">Going To</button>
+    </div>
+
+    <% current_user.events.each do |event| %>
+      
+      <div class="card-trip">
+        <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+        
+        <div class="card-trip-infos">
+          
+          <div>
+            <h5><%= event.name %></h5>
+            <p><i class="fas fa-pen-square"></i>  <%= event.description %></p>
+            <p><i class="far fa-calendar-alt"></i>  <%= event.day.date %></p>
+            <p><i class="fas fa-glass-cheers "></i>  <%= event.category %></p>
+            <p><i class="fas fa-euro-sign"></i>  <%= event.price %></p>
+            <p><i class="fas fa-users"></i>  <span id="max_people"><%= event.people_left %>
+          </div>
+          
+          <div id="book" class="event-card-btn">
+            <% if event.user != current_user %>
+              <% if event.day.booked_by?(current_user) %>
+                <span>It seems you've already joined this event!</span>
+              <% elsif !policy(event).create_booking? %>
+                <span>Too late! The event is already full.</span>
+              <% else %>
+                <%= simple_form_for [event.day, booking] do |f| %>
+                  <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+      
+        </div>
+      </div>  
+    <% end %>
+    
+        <% current_user.events.each do |event| %>
+      
+      <div class="card-trip">
+        <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+        
+        <div class="card-trip-infos">
+          
+          <div>
+            <h5><%= event.name %></h5>
+            <p><i class="fas fa-pen-square"></i>  <%= event.description %></p>
+            <p><i class="far fa-calendar-alt"></i>  <%= event.day.date %></p>
+            <p><i class="fas fa-glass-cheers "></i>  <%= event.category %></p>
+            <p><i class="fas fa-euro-sign"></i>  <%= event.price %></p>
+            <p><i class="fas fa-users"></i>  <span id="max_people"><%= event.people_left %>
+          </div>
+          
+          <div id="book" class="event-card-btn">
+            <% if event.user != current_user %>
+              <% if event.day.booked_by?(current_user) %>
+                <span>It seems you've already joined this event!</span>
+              <% elsif !policy(event).create_booking? %>
+                <span>Too late! The event is already full.</span>
+              <% else %>
+                <%= simple_form_for [event.day, booking] do |f| %>
+                  <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+      
+        </div>
+      </div>  
+    <% end %>
+
+
+
+
+
+
+    
+  </div><!--col event -->
+
+
+
+
+</div>
+ 
+
