@@ -1,8 +1,3 @@
-
-
-/*custom font*/
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
-
 /*basic reset*/
 * {margin: 0; padding: 0;}
 
@@ -60,20 +55,33 @@ body {
   font-size: 13px;
 }
 /*buttons*/
-#msform .action-button {
+#msform .btn-outline-success {
   width: 100px;
-  background: #27AE60;
   font-weight: bold;
   color: white;
-  border: 0 none;
+  box-shadow: 0 0 0 0.1rem rgba(253, 126, 19, 0.6) !important;
   border-radius: 1px;
   cursor: pointer;
   padding: 10px 5px;
   margin: 10px 5px;
 }
-#msform .action-button:hover, #msform .action-button:focus {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+
+#msform .btn-outline-dark {
+  width: 100px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 0 0.1rem rgba(253, 126, 19, 0.6) !important;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  &:hover{
+    background-color:transparent;
+    color: rgba(0, 0, 0, 0.5) !important;
+    // font-family: "Nunito" !important;
+  }
 }
+
 /*headings*/
 .fs-title {
   font-size: 15px;
@@ -121,7 +129,6 @@ body {
   width: 100%;
   height: 2px;
   background: white;
-  // position: absolute;
   left: -50%;
   top: 9px;
   z-index: -1; /*put it behind the numbers*/
@@ -133,6 +140,14 @@ body {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-  background: #27AE60;
+  background: rgba(253, 126, 19, 0.6);
   color: white;
+}
+
+.btn-outline-success:focus, .btn-outline-success.focus {
+  box-shadow: 0 0 0 0.3rem rgba(253, 126, 19, 0.6) !important;
+}
+
+.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success.active:not(:disabled):not(.disabled), .show > .btn-outline-success.dropdown-toggle {
+  background-color: #FD7E13 !important;
 }

@@ -4,6 +4,7 @@
 
 .cards {
   padding: 16px;
+  width: 60%;
   .card-img-top {
     border-radius: 10px 10px 0px 0px;
     height: 200px;
@@ -11,12 +12,9 @@
 }
 
 .card {
-  // background-size: cover;
-  // background-position: center;
   border-radius: 10px !important;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   align-items: left;
-  // width: auto;
   height: 385px;
 }
 
@@ -59,6 +57,11 @@
   height: 100vh;
   position: sticky;
   top: 0;
-  width: 200%;
+  width: 40%;
   border-radius: 10px;
+}
+
+#select-category {
+  font-size: 20px;
+  margin: 0 16px 0 16px !important;
 }
