@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :review_users, foreign_key: :reviewer_id, class_name: "User"
   has_many :events
   has_many :bookings
+  has_one_attached :avatar
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
