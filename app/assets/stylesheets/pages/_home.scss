@@ -102,6 +102,12 @@ body {
   color: #6c757d;
 }
 
+.location-event.home {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 .event-main-content-name {
   height:55px;
 }
