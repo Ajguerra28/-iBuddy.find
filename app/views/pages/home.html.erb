@@ -33,7 +33,7 @@
                     <%= link_to event_path(event) do %>
                       <div class="card card-event mb-4">
                         <div class="img-download">
-                          <%= cl_image_tag  "development/#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+                          <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
                         </div>
                         <div class="event-body">
                           <div class="event-main-content d-flex justify-content-between mb-2">

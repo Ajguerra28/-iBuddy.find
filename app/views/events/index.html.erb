@@ -7,7 +7,7 @@
           <div class="card card-event mb-4">
             <div class="img-download">
               <%# <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap"> %>
-              <%= cl_image_tag  "development/#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+              <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
               <%= link_to events_path do %> <%# Implement modal to show more information #%>
                 <i class="far fa-eye"></i>
               <% end %>
