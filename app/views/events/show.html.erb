@@ -18,15 +18,15 @@
         <p><i class="fas fa-venus-mars"></i>  <%= @event.user.gender %></p>
       </div>
       
-      <div class="profile-info-card-event-card-button">
-        <button type="button" class="btn btn-warning">Message</button>
-        <button type="button" class="btn btn-warning">Review</button>
+      <div class="d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+        <button type="button" id="message" class="btn btn-warning">Message</button>
+        <button type="button" id ="review"class="btn btn-warning">Review</button>
       </div>
     </div>
   
   </div> <!--col profile -->
 
-  <div class ="col-8">
+  <div class ="col-8"> <!--col event -->
     
     <div class="card-trip">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
@@ -39,7 +39,7 @@
         <p><i class="fas fa-euro-sign"></i>  <%= @event.price %></p>
         <p><i class="fas fa-users"></i>  <span id="max_people"><%= @event.people_left %>
       </div>
-      <div class="event-card-btn">
+      <div id="book" class="event-card-btn">
         <% if @event.user != current_user %>
           <% if @event.day.booked_by?(current_user) %>
             <span>It seems you've already joined this event!</span>
@@ -55,9 +55,9 @@
     </div>
 
 
-  </div>
+  </div><!--col event -->
 
-  <div class="map-event-show">
+  <div class="map-event-show"> <!--col map -->
     <div class="card-trip-infos">
       <h5>Map </h5>
       <p><i class="fas fa-map-marker-alt"></i>  <%= @event.location %></p>
@@ -71,7 +71,7 @@
         </div>
       <% end %>
     </div>
-  </div>
+  </div> <!--col map -->
  
 <div class="footer">
   <div class="footer-links">
