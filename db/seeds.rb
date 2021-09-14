@@ -17,14 +17,37 @@ puts "------ Creating the three musketeers.. -------"
 puts "----------------------------------------------"
 
 antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Via Futebol Clube do Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+antonio.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/avatars/main_users/antonio.jpg")),
+  filename: 'antonio'
+)
 david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Rua Manuel Arriaga', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+david.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/avatars/main_users/david.jpg")),
+  filename: 'david'
+)
 mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+mariana.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/avatars/main_users/mariana.jpg")),
+  filename: 'mariana'
+)
 
 puts "----------------------------------------------"
 puts "----- Hello António, David and Mariana! ------"
 puts "----------------------------------------------"
 
-locations = ["Rua Condo Redondo Nº117","Rua Manuel Arriaga Nº8","R. Prof. Hernâni Cidade","Av. da Liberdade","Rua Dom João V","Via Futebol Clube do Porto","R. Dom Tomás de Almeida 61","Via Circular do Montijo","R. Pedro Álvares Cabral 42", "Av. do Uruguai 36"]
+locations = [
+  "Rua Condo Redondo Nº117",
+  "Rua Manuel Arriaga Nº8",
+  "R. Prof. Hernâni Cidade",
+  "Av. da Liberdade",
+  "Rua Dom João V",
+  "Via Futebol Clube do Porto",
+  "R. Dom Tomás de Almeida 61",
+  "Via Circular do Montijo",
+  "R. Pedro Álvares Cabral 42",
+  "Av. do Uruguai 36"
+]
 counter = 0
 
 portuguese_female_first_names = %w[Maria Clara Beatriz Matilde Catarina Ana Bruna Vitoria Renata Carlota] # 10
@@ -47,6 +70,10 @@ puts "----------------------------------------------"
     gender: 'Female',
     phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
+  )
+  user_female.avatar.attach(
+    io: File.open(Rails.root.join("app/assets/images/avatars/female/female_ava#{rand(1..15)}.jpg")),
+    filename: 'females'
   )
 end
 
@@ -71,41 +98,45 @@ end
     phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
   )
+  user_male.avatar.attach(
+    io: File.open(Rails.root.join("app/assets/images/avatars/male/male_ava#{rand(1..15)}.jpg")),
+    filename: 'males'
+  )
 end
 
   puts "----------------------------------------------"
   puts "------------ Welcome gentlemans! -------------"
   puts "----------------------------------------------"
 
-  puts "------------------ Hold on! ------------------"
+  # puts "------------------ Hold on! ------------------"
 
-  puts "----------------------------------------------"
-  puts "---------- Creating some randoms! ------------"
-  puts "----------------------------------------------"
+  # puts "----------------------------------------------"
+  # puts "---------- Creating some randoms! ------------"
+  # puts "----------------------------------------------"
 
-35.times do
-  user = User.create(
-    name: "#{Faker::Name.first_name} #{Faker::Name.last_name}",
-    location: locations[counter],
-    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
-    email: Faker::Internet.email,
-    password: '123123',
-    gender: %w[Male Female].sample,
-    phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
-    date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
-  )
+# 35.times do
+#   user = User.create(
+#     name: "#{Faker::Name.first_name} #{Faker::Name.last_name}",
+#     location: locations[counter],
+#     description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+#     email: Faker::Internet.email,
+#     password: '123123',
+#     gender: %w[Male Female].sample,
+#     phone_number: "+351 9#{rand(1..3)}#{rand(0..9)} #{Faker::Number.number(digits: 3)} #{Faker::Number.number(digits: 3)}",
+#     date_of_birth: Faker::Date.birthday(min_age: 18, max_age: 50)
+#   )
 
-  counter += 1
-  reviewer = User.all - [user]
-  5.times do
-    review = ReviewUser.create(
-      rating: %w[1 2 3 4 5].sample,
-      content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
-      reviewee_id: user,
-      reviewer_id: reviewer.sample
-    )
-  end
-end
+#   counter += 1
+#   reviewer = User.all - [user]
+#   5.times do
+#     review = ReviewUser.create(
+#       rating: %w[1 2 3 4 5].sample,
+#       content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+#       reviewee_id: user,
+#       reviewer_id: reviewer.sample
+#     )
+#   end
+# end
 
 puts "----------------------------------------------"
 puts "---------- Creating some Events! ------------"

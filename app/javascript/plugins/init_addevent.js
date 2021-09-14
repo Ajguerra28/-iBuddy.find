@@ -4,8 +4,8 @@
   var animating; //flag to prevent quick multi-click glitches
 const addEvent = () => {
   $(".next").click(function () {
-    // if (animating) return false;
-    // animating = true;
+    if (animating) return false;
+    animating = true;
 
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
@@ -30,7 +30,7 @@ const addEvent = () => {
           opacity = 1 - now;
           current_fs.css({
             transform: "scale(" + scale + ")",
-            position: "absolute",
+            position: "absolute"
           });
           next_fs.css({ left: left, opacity: opacity });
         },
@@ -47,8 +47,8 @@ const addEvent = () => {
 
 
   $(".previous").click(function () {
-    // if (animating) return false;
-    // animating = true;
+    if (animating) return false;
+    animating = true;
 
     current_fs = $(this).parent();
     previous_fs = $(this).parent().prev();
