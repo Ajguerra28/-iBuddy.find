@@ -18,10 +18,15 @@ html {
 body {
   font-family: "Nunito";
 }
+
+.container {
+  min-height: 45vh;
+}
+
 /*form styles*/
 #msform {
   width: 400px;
-  margin: 50px auto;
+  margin: 5px auto;
   text-align: center;
   position: relative;
 }
@@ -116,7 +121,7 @@ body {
   width: 100%;
   height: 2px;
   background: white;
-  position: absolute;
+  // position: absolute;
   left: -50%;
   top: 9px;
   z-index: -1; /*put it behind the numbers*/
