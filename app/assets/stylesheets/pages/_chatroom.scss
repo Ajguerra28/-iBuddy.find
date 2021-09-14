@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+// body {
+//   font-family: sans-serif !important;
+// }
+>>>>>>> ffe2a41d70dd31ea5b31cedc8ce9971642fcd771
 .bg-funky	{
   background: #FF1744;
 }
@@ -140,6 +146,10 @@ img {max-width: 100%;}
   width: 700px;
   height: auto;
   display: flex;
+<<<<<<< HEAD
+=======
+  // text-align: center;
+>>>>>>> ffe2a41d70dd31ea5b31cedc8ce9971642fcd771
   margin: auto;
 }
 
@@ -152,6 +162,10 @@ img {max-width: 100%;}
 }
 
 // BUTTON
+<<<<<<< HEAD
+=======
+
+>>>>>>> ffe2a41d70dd31ea5b31cedc8ce9971642fcd771
 @import url('https://fonts.googleapis.com/css?family=Roboto:900');
 
 $bg: #3c3c3c;
@@ -169,6 +183,21 @@ $black: #202121;
   }
 }
 
+<<<<<<< HEAD
+=======
+// body {
+//   font-family: 'Roboto', sans-serif;
+//   font-size: 1rem;
+//   line-height: 1.5;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+//   min-height: 100vh;
+//   background: $bg;
+// }
+
+>>>>>>> ffe2a41d70dd31ea5b31cedc8ce9971642fcd771
 button {
   position: relative;
   display: inline-block;
@@ -193,6 +222,15 @@ button {
 }
 
 @supports (display: grid) {
+<<<<<<< HEAD
+=======
+  // body {
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-gap: 0.625rem;
+  //   grid-template-areas: ". main main ." ". main main .";
+  // }
+>>>>>>> ffe2a41d70dd31ea5b31cedc8ce9971642fcd771
 
   #button-chatroom {
     grid-area: main;
