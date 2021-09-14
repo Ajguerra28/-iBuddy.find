@@ -20,9 +20,7 @@
 </div>
 <h1 class="row-title">Steps to have an adventure</h1>
 <div class="container steps_image">
-  <%# <div class="steps_image"> %>
     <%= image_tag "steps.png" %>
-  <%# </div> %>
 </div>
 
 <h1 class="row-title">Upcoming events</h1>
@@ -45,24 +43,22 @@
                           <div class="event-main-content-name d-flex justify-content-between">
                             <h5 class="event-name"><%= event.name.capitalize %></h5>
                           </div>
-                          <div class="row mb-2">
+                          <div class="mb-2">
                             <div class="event-main-content d-flex location">
                               <i class="fas fa-map-marker-alt"></i>
-                              <p class="location-event"><%= event.location %></p>
+                              <p class="location-event home"><%= event.location %></p>
                             </div>
                           </div>
-                          <div class="row">
+                          <%# <div class="row"> %>
                             <div class="event-main-content d-flex participants">
                               <i class="fas fa-user-alt mr-2 mt-2"></i>
                               <% if event.max_people <= 3 %>
-                                <p class="location-event">Hurry up! There are only <%= event.people_left %> spots left!</p>
+                                <p class="location-event home">Hurry up! There are only <%= event.people_left %> spots left!</p>
                               <% else %>
-                                <p class= "location-event"><%= event.people_left %> spots left</p>
+                                <p class= "location-event home"><%= event.people_left %> spots left</p>
                               <% end %>
-                              <i class="fas fa-user-alt m-2"></i>
-                              <p class= "location-event">3 people</p>
                             </div>
-                          </div>
+                          <%# </div> %>
                         </div>
                       </div>
                     <% end %>
