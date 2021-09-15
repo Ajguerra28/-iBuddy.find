@@ -28,17 +28,29 @@
 
   </div> <!--col profile -->
 
+  
   <div class ="col-8"> <!--col event -->
     <div class="card-trip">
       <%= cl_image_tag  "#{@event.photo.key}", crop: :fill, class: "card-img-top" %>
       <div class="card-trip-infos">
         <div>
           <h5><%= @event.name %></h5>
-          <p><i class="fas fa-pen-square"></i>  <%= @event.description %></p>
-          <p><i class="far fa-calendar-alt"></i>  <%= @event.day.date %></p>
-          <p><i class="fas fa-glass-cheers "></i>  <%= @event.category %></p>
-          <p><i class="fas fa-euro-sign"></i>  <%= @event.price %></p>
-          <p><i class="fas fa-users"></i>  <span id="max_people"><%= @event.people_left %>
+          <div class="d-flex">
+            <div>
+              <p><i class="fas fa-pen-square"></i></p>
+              <p><i class="far fa-calendar-alt"></i></p>
+              <p><i class="fas fa-glass-cheers "></i></p>
+              <p><i class="fas fa-euro-sign"></i></p>
+              <p><i class="fas fa-users"></i></p>  
+            </div>
+            <div class="mx-3">
+              <p><%= @event.description %></p>
+              <p><%= @event.day.date %></p>
+              <p><%= @event.category %></p>
+              <p><%= @event.price %></p>
+              <p><span id="max_people"><%= @event.people_left %>
+            </div>
+          </div>
         </div>
         <div id="book" class="event-card-btn">
           <% if @event.user != current_user %>
@@ -57,7 +69,6 @@
 
 
   </div><!--col event -->
-
   <div class="map-event-show"> <!--col map -->
     <div class="card-trip-infos">
       <h5>Map </h5>
@@ -73,5 +84,7 @@
       <% end %>
     </div>
   </div> <!--col map -->
+
  
+</div>
 </div>
