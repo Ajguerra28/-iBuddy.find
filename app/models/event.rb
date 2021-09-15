@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_many :event_days
+  has_many :chatrooms
   has_many :bookings, through: :event_days
   geocoded_by :location
   has_one_attached :photo
