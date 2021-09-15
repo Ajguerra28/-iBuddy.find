@@ -10,7 +10,7 @@
 
 .profile-info-card-event{
   width: auto;
-  height: 100vh;
+  height: 100%;
   padding: 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
@@ -105,19 +105,13 @@
   width: 40px;
 }
 
-.event-card-btn {
-
-}
 
 #sweet-alert-demo {
   color: white !important;
   font-size: 16px !important;
 }
 
-///////////////////////////// FOOTER
-
-
-////////////////////// MAP
+///////////////////// MAP
 
 .show-mp{
   overflow: hidden;
@@ -133,4 +127,8 @@
   font-size: 16px;
   opacity: .7;
   margin-top: 10px;
+}
+
+#map {
+  margin: 0px !important;
 }
