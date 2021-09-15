@@ -123,8 +123,9 @@ img {max-width: 100%;}
   }
   .messaging { background: #fff;}
   .msg_history {
-    max-height: 516px;
+    height: 516px;
     overflow-y: auto;
+    width: 600px;
   }
 
 .credit {

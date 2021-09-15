@@ -105,12 +105,18 @@ body {
   margin: 0;
   line-height: 2.3;
   color: #6c757d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 210px;
 }
 
 .location-event.home {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 300px !important;
+
   }
 
 .event-main-content-name {
