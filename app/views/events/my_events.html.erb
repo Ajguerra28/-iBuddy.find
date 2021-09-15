@@ -30,90 +30,66 @@
 
 
   <div class="col-8"> <!--col event -->
-    
-    <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'London')">My Events</button>
-      <button class="tablinks" onclick="openCity(event, 'Paris')">Going To</button>
-    </div>
 
-    <% current_user.events.each do |event| %>
-      
-      <div class="card-trip">
-        <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
-        
-        <div class="card-trip-infos">
-          
-          <div>
-            <h5><%= event.name %></h5>
-            <p><i class="fas fa-pen-square"></i>  <%= event.description %></p>
-            <p><i class="far fa-calendar-alt"></i>  <%= event.day.date %></p>
-            <p><i class="fas fa-glass-cheers "></i>  <%= event.category %></p>
-            <p><i class="fas fa-euro-sign"></i>  <%= event.price %></p>
-            <p><i class="fas fa-users"></i>  <span id="max_people"><%= event.people_left %>
-          </div>
-          
-          <div id="book" class="event-card-btn">
-            <% if event.user != current_user %>
-              <% if event.day.booked_by?(current_user) %>
-                <span>It seems you've already joined this event!</span>
-              <% elsif !policy(event).create_booking? %>
-                <span>Too late! The event is already full.</span>
-              <% else %>
-                <%= simple_form_for [event.day, booking] do |f| %>
-                  <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
-      
-        </div>
-      </div>  
-    <% end %>
-    
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Events</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Joined Events</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <% current_user.events.each do |event| %>
-      
-      <div class="card-trip">
-        <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
-        
-        <div class="card-trip-infos">
           
-          <div>
-            <h5><%= event.name %></h5>
-            <p><i class="fas fa-pen-square"></i>  <%= event.description %></p>
-            <p><i class="far fa-calendar-alt"></i>  <%= event.day.date %></p>
-            <p><i class="fas fa-glass-cheers "></i>  <%= event.category %></p>
-            <p><i class="fas fa-euro-sign"></i>  <%= event.price %></p>
-            <p><i class="fas fa-users"></i>  <span id="max_people"><%= event.people_left %>
-          </div>
+          <div class="card-trip" >
+            <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+            
+            <div class="card-trip-infos">
+              
+              <div>
+                <h5><%= event.name %></h5>
+                <p><i class="fas fa-pen-square"></i>  <%= event.description %></p>
+                <p><i class="far fa-calendar-alt"></i>  <%= event.day.date %></p>
+                <p><i class="fas fa-glass-cheers "></i>  <%= event.category %></p>
+                <p><i class="fas fa-euro-sign"></i>  <%= event.price %></p>
+                <p><i class="fas fa-users"></i>  <span id="max_people"><%= event.people_left %>
+              </div>
+            
+            </div>
+          </div>  
+        <% end %>
+      </div>
+
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <% current_user.booked_events_days.each do |event_day| %>
           
-          <div id="book" class="event-card-btn">
-            <% if event.user != current_user %>
-              <% if event.day.booked_by?(current_user) %>
-                <span>It seems you've already joined this event!</span>
-              <% elsif !policy(event).create_booking? %>
-                <span>Too late! The event is already full.</span>
-              <% else %>
-                <%= simple_form_for [event.day, booking] do |f| %>
-                  <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
+          <div class="card-trip" >
+            <%= cl_image_tag  "#{event_day.event.photo.key}", crop: :fill, class: "card-img-top" %>
+            
+            <div class="card-trip-infos">
+              
+              <div>
+                <h5><%= event_day.event.name %></h5>
+                <p><i class="fas fa-pen-square"></i>  <%= event_day.event.description %></p>
+                <p><i class="far fa-calendar-alt"></i>  <%= event_day.event.day.date %></p>
+                <p><i class="fas fa-glass-cheers "></i>  <%= event_day.event.category %></p>
+                <p><i class="fas fa-euro-sign"></i>  <%= event_day.event.price %></p>
+                <p><i class="fas fa-users"></i>  <span id="max_people"><%#= event.people_left %>
+              </div>
+              
+            </div>
+          </div>  
+        <% end %>
       
-        </div>
-      </div>  
-    <% end %>
-
-
-
-
-
-
+      </div>
+      
+    </div>
     
   </div><!--col event -->
-
-
-
 
 </div>
  
