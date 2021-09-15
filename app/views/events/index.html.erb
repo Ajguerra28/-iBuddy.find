@@ -77,7 +77,7 @@
                 <div class="event-main-content d-flex participants">
                   <i class="fas fa-user-alt mr-2 mt-2"></i>
                   <% if event.max_people <= 3 %>
-                    <p class="location-event">Hurry up! There are only <%= event.people_left %> spots left!</p>
+                    <p class="location-event">Hurry up!<br id="gap_between"> There are only <%= event.people_left %> spots left!</p>
                   <% else %>
                     <p class= "location-event"><%= event.people_left %> spots left</p>
                   <% end %>

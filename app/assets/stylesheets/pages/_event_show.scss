@@ -138,3 +138,10 @@
 #map {
   margin: 0px !important;
 }
+
+#gap_between {
+  display: block; /* makes it have a width */
+  content: ""; /* clears default height */
+  margin-top: -10px; /* change this to whatever height you want it */
+
+}
