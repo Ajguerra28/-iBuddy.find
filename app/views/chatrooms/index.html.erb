@@ -1,0 +1,6 @@
+ <% @chatrooms.each do |chat| %>
+  <%= link_to chatroom_path(chat) do %>
+    <p><%= chat.user_id.name %></p>
+    <p><%= chat.updated_at.to_date %></p>
+  <% end %>
+<% end %>

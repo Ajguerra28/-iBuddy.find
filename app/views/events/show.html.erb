@@ -18,8 +18,19 @@
         <p><i class="fas fa-venus-mars"></i>  <%= @event.user.gender %></p>
       </div>
 
-      <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
-        <button type="button" id="message" class="col btn btn-warning">Message</button>
+      <div class="d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+      <% if @event.user != current_user %>
+        <% if @chatroom.present?  %>
+          <%= link_to chatroom_path(@chatroom.id) do %>
+            <button type="button" id="message" class="btn btn-warning">Message</button>
+          <% end %>
+        <% else %>
+          <%= link_to event_chatrooms_path(@event), method: :post do %>
+            <button type="button" id="message" class="btn btn-warning">Message</button>
+          <% end %>
+        <% end %>
+      <% end %>
+        <button type="button" id ="review"class="btn btn-warning">Review</button>
       </div>
 
       <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
@@ -88,7 +99,5 @@
       <% end %>
     </div>
   </div> <!--col map -->
-
-
 </div>
 </div>

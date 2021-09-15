@@ -19,13 +19,13 @@ body {
 }
 
 /*form styles*/
-#msform {
+.msform {
   width: 400px;
   margin: 5px auto;
   text-align: center;
   position: relative;
 }
-#msform fieldset {
+.msform fieldset {
   background: white;
   border: 0 none;
   border-radius: 3px;
@@ -39,11 +39,11 @@ body {
   position: relative;
 }
 /*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
+.msform fieldset:not(:first-of-type) {
   display: none;
 }
 /*inputs*/
-#msform input, #msform textarea {
+.msform input, .msform textarea {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -55,10 +55,10 @@ body {
   font-size: 13px;
 }
 /*buttons*/
-#msform .btn-outline-success {
+.msform .btn-outline-success {
   width: 100px;
   font-weight: bold;
-  color: white;
+  // color: white;
   box-shadow: 0 0 0 0.1rem rgba(253, 126, 19, 0.6) !important;
   border-radius: 1px;
   cursor: pointer;
@@ -66,10 +66,10 @@ body {
   margin: 10px 5px;
 }
 
-#msform .btn-outline-dark {
+.msform .btn-outline-dark {
   width: 100px;
   font-weight: bold;
-  color: white;
+  // color: white;
   box-shadow: 0 0 0 0.1rem rgba(253, 126, 19, 0.6) !important;
   border-radius: 1px;
   cursor: pointer;
