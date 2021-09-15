@@ -9,6 +9,10 @@ class ChatroomPolicy < ApplicationPolicy
     true
   end
 
+  def create?
+    true
+  end
+
   def my_chatrooms?
     true
   end

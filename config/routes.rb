@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :events do
+    resources :chatrooms, only: :create
     collection do
       get :my_events
     end
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: :show
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
 
