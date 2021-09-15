@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create, :index]
   end
 
-  resources :users, only: :show
+  resources :users, only: :show do
+  end
+  resources :reviews
+
   resources :chatrooms, only: %i[index show] do
     resources :messages, only: :create
   end
