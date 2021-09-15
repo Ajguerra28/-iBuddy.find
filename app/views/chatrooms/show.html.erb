@@ -1,22 +1,46 @@
-<div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-2">
-      <h1>#<%= @chatroom.name %></h1>
-          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-            <% @chatroom.messages.each do |message| %>
-              <div class="message-container" id="message-<%= message.id %>">
-                <i class="author">
-                  <span><%= message.user.name %></span>
-                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-                </i>
-                <p><%= message.content %></p>
+<div class="container-messaging">
+  <div>
+    <h1 class="heading text-center">#<%= @chatroom.name %></h1>
+
+    <div class="messaging">
+          <div class="inbox_msg">
+            <div class="mesgs">
+              <div class="msg_history">
+                <div class="incoming_msg">
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <% @chatroom.messages.each do |message| %>
+                       <% if message.user == current_user %>
+                        <%= cl_image_tag current_user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
+                        <%= message.user.name %>
+                        <p><%= message.content %> </p>
+                        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
+                      <% else %>
+                        <div class="outgoing_msg">
+                          <div class="sent_msg">
+                            <%= message.user.name %>
+                            <%= cl_image_tag message.user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
+                            <p><%= message.content %> </p>
+                            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
+                          </div>
+                        </div>
+                      <% end %>
+                    <% end %>
+                    </div>
+                  </div>
+                </div>
               </div>
-            <% end %>
+            </div>
           </div>
+        </div>
+        <div id="messages" data-chatroom-id="<%= @chatroom.id %>"></div>
         <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
           <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-          <%= f.button :submit %>
+          <div id="button-chatroom">
+            <button class="send-message">Send message</button>
+          </div>
         <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -6,9 +6,9 @@ class EventsController < ApplicationController
       @events = policy_scope(Event).where(category: params[:category])
     else
       @events = policy_scope(Event)
-      @markers = []
-      @events.each { |event| add_marker(event) }
     end
+    @markers = []
+    @events.each { |event| add_marker(event) }
   end
 
   def my_events

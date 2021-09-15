@@ -251,7 +251,7 @@ event15.photo.attach(
   filename: 'nightclub'
 )
 
-event16 = Event.create!(user: users.sample, name:'Paris trip', location:'Paris', category:'Travel', description:'Mona lisa, baguetes and molin rouge', price:90.00, max_people:4)
+event16 = Event.create!(user: users.sample, name:'Paris trip', location:'Lisbon', category:'Travel', description:'Mona lisa, baguetes and molin rouge', price:90.00, max_people:4)
 event16.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
 event16.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/category_img/paris.jpg")),
