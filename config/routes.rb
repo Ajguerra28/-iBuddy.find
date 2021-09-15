@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :event_days, only: [] do
-    resources :bookings, only: :create
+    resources :bookings, only: [:create, :index]
   end
 
   resources :users, only: :show

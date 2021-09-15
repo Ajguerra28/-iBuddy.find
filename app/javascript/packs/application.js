@@ -16,6 +16,7 @@ import { addEvent } from '../plugins/init_addevent';
 // import { initChatroom } from '../plugins/init_chatroom';
 // import { initChatroomCable } from '../channels/chatroom_channel';
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
