@@ -32,40 +32,58 @@
       <% end %>
         <button type="button" id ="review"class="btn btn-warning">Review</button>
       </div>
+
+      <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+
+        <button type="button" id ="review"class="col btn btn-warning">Review</button>
+      </div>
+
+
     </div>
 
   </div> <!--col profile -->
+
 
   <div class ="col-8"> <!--col event -->
     <div class="card-trip">
       <%= cl_image_tag  "#{@event.photo.key}", crop: :fill, class: "card-img-top" %>
       <div class="card-trip-infos">
-      <div>
-        <h5><%= @event.name %></h5>
-        <p><i class="fas fa-pen-square"></i>  <%= @event.description %></p>
-        <p><i class="far fa-calendar-alt"></i>  <%= @event.day.date %></p>
-        <p><i class="fas fa-glass-cheers "></i>  <%= @event.category %></p>
-        <p><i class="fas fa-euro-sign"></i>  <%= @event.price %></p>
-        <p><i class="fas fa-users"></i>  <span id="max_people"><%= @event.people_left %>
-      </div>
-      <div id="book" class="event-card-btn">
-        <% if @event.user != current_user %>
-          <% if @event.day.booked_by?(current_user) %>
-            <span>It seems you've already joined this event!</span>
-          <% elsif !policy(@event).create_booking? %>
-            <span>Too late! The event is already full.</span>
-          <% else %>
-            <%= simple_form_for [@event.day, @booking] do |f| %>
-              <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+        <div>
+          <h5><%= @event.name %></h5>
+          <div class="d-flex">
+            <div>
+              <p><i class="fas fa-pen-square"></i></p>
+              <p><i class="far fa-calendar-alt"></i></p>
+              <p><i class="fas fa-glass-cheers "></i></p>
+              <p><i class="fas fa-euro-sign"></i></p>
+              <p><i class="fas fa-users"></i></p>
+            </div>
+            <div class="mx-3">
+              <p><%= @event.description %></p>
+              <p><%= @event.day.date %></p>
+              <p><%= @event.category %></p>
+              <p><%= @event.price %></p>
+              <p><span id="max_people"><%= @event.people_left %>
+            </div>
+          </div>
+        </div>
+        <div id="book" class="event-card-btn">
+          <% if @event.user != current_user %>
+            <% if @event.day.booked_by?(current_user) %>
+              <span>It seems you've already joined this event!</span>
+            <% elsif !policy(@event).create_booking? %>
+              <span>Too late! The event is already full.</span>
+            <% else %>
+              <%= simple_form_for [@event.day, @booking] do |f| %>
+                <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
       </div>
     </div>
 
 
   </div><!--col event -->
-
   <div class="map-event-show"> <!--col map -->
     <div class="card-trip-infos">
       <h5>Map </h5>
@@ -81,17 +99,5 @@
       <% end %>
     </div>
   </div> <!--col map -->
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-  </div>
 </div>
 </div>

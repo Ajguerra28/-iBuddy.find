@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   def my_events
     @events = Event.where(user_id: current_user)
+    @event_day = EventDay.where(event_id: @events)
     authorize @events
   end
 
