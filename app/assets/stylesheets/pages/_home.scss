@@ -105,6 +105,10 @@ body {
   margin: 0;
   line-height: 2.3;
   color: #6c757d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
 }
 
 .location-event.home {

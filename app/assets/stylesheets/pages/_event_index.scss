@@ -11,6 +11,13 @@
   }
 }
 
+.card-event .event-name {
+  text-align: left;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+
 .card {
   border-radius: 10px !important;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -68,10 +75,10 @@
 
 .custom-btn {
   display: inline-flex;
-  height: 40px;
-  width: 150px;
+  height: 45px;
+  width: 146px;
   border: 2px solid #ffb77a;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 15px 20px 15px;
   color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
   text-decoration: none;
