@@ -1,3 +1,5 @@
+Message.destroy_all
+Chatroom.destroy_all
 puts "Destroying all the Reviews \ ..."
 ReviewUser.destroy_all
 puts "Destroying all the Events \ ..."

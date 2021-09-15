@@ -11,14 +11,14 @@ class ChatroomsController < ApplicationController
 
   def create
     @event = Event.find(params[:event_id])
-    @chatroom = Chatroom.create(user_id: current_user, event_owner: @event.user_id)
+    @chatroom = Chatroom.create(user: current_user, event: @event)
     authorize @chatroom
 
     redirect_to chatroom_path(@chatroom)
   end
 
   def my_chatrooms
-    @chatrooms = Chatroom.where(user: current_user)
+    @chatrooms = Chatroom.where(user_id: current_user)
     authorize @chatrooms
   end
 end
