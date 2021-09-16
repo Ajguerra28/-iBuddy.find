@@ -1,3 +1,4 @@
 class ReviewUser < ApplicationRecord
-  has_many :user
+  belongs_to :reviewer, :class_name => 'User'
+  belongs_to :reviewee, :class_name => 'User'
 end

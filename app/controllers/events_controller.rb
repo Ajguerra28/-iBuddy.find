@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @booking = Booking.new
     @markers = []
-
+    @reviews = ReviewUser.where(reviewee: @event.user)
     add_marker(@event)
 
     authorize @event

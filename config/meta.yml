@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "iBuddy.find()"
+meta_title: "Share moments, Share life"
+meta_description: "Have you ever quit dpoing something because you don't"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
