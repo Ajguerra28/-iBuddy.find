@@ -21,6 +21,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @booking = Booking.new
     @markers = []
+    if @event.chatrooms.where(user: current_user).present?
+      @chatroom = @event.chatrooms.find_by(user: current_user)
+    end
+
 
     add_marker(@event)
 

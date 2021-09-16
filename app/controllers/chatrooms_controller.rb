@@ -11,10 +11,13 @@ class ChatroomsController < ApplicationController
 
   def create
     @event = Event.find(params[:event_id])
-    @chatroom = Chatroom.create(user: current_user, event: @event)
+    @chatroom = Chatroom.new(user: current_user, event: @event)
     authorize @chatroom
-
-    redirect_to chatroom_path(@chatroom)
+    if @chatroom.save
+       redirect_to chatroom_path(@chatroom)
+    else
+      redirect_to @event, notice: 'You already have a chatroom'
+    end
   end
 
   def my_chatrooms

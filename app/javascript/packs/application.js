@@ -13,6 +13,7 @@ import { initTyped } from '../plugins/init_typejs';
 import { initCarousel } from '../plugins/init_carousel';
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { addEvent } from '../plugins/init_addevent';
+// import { initFlatpickr } from "../plugins/flatpickr";
 // import { initChatroom } from '../plugins/init_chatroom';
 // import { initChatroomCable } from '../channels/chatroom_channel';
 
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   addEvent();
   initSweetalert();
   initTyped();
+  // initFlatpickr();
   initCarousel();
   initMapbox();
   // initChatroom();
