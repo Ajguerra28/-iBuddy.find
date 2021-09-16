@@ -15,6 +15,6 @@ class BookingsController < ApplicationController
 
     @booking.save!
 
-    redirect_to @event_day.event
+    redirect_to @event_day.event, notice: 'You have joined this event!'
   end
 end

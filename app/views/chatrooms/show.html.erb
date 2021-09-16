@@ -1,6 +1,8 @@
+<div class="back-show"><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %></div>
+
 <div class="container-messaging">
   <div>
-    <h1 class="heading text-center">#<%= @chatroom.name %></h1>
+    <h1 class="heading text-center">Send a message now!</h1>
 
     <div class="messaging">
           <div class="inbox_msg">
@@ -10,7 +12,7 @@
                   <div class="received_msg">
                     <div class="received_withd_msg">
                       <% @chatroom.messages.each do |message| %>
-                       <% if message.user == current_user %>
+                       <% if message.user != current_user %>
                         <%= cl_image_tag current_user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
                         <%= message.user.name %>
                         <p><%= message.content %> </p>

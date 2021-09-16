@@ -20,12 +20,14 @@ const initSweetalert = (selector, options = {}) => {
         confirmButtonText: "Yes, join now!",
       }).then((result) => {
         if (result.isConfirmed) {
-          // Swal.fire(
-          //   "Sock Bought!",
-          //   "You'll receive a message from the owner soon!",
-          //   "success"
-          // );
-          document.querySelector('#new_booking').submit();
+          Swal.fire(
+            "Booked done!",
+            "Share moments. Share life.",
+            "success"
+          );
+          setTimeout(() => {
+            document.querySelector("#new_booking").submit();
+          }, 3000);
         }
       });
     });
