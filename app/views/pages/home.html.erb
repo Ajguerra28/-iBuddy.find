@@ -22,7 +22,11 @@
                     <%= link_to event_path(event) do %>
                       <div class="card card-event mb-4">
                         <div class="img-download">
-                          <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+                          <% if event.photo.key.nil? %>
+                            <img src="https://powerthoughtsmeditationclub.com/wp-content/uploads/2015/10/bigstock-Happy-group-of-friends-family-43459618.jpg" alt="" class="card-img-top" />
+                          <% else %>
+                            <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+                          <% end %>
                         </div>
                         <div class="event-body">
                           <div class="event-main-content d-flex justify-content-between mb-2">

@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     if params[:category]
       @events = policy_scope(Event).where(category: params[:category])
     else
-      @events = policy_scope(Event)
+      @events = policy_scope(Event.order("created_at DESC"))
     end
     @markers = []
     @events.each { |event| add_marker(event) }

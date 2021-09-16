@@ -1,10 +1,16 @@
-<div class="container">
+<div class="row">
   <% @chatrooms.each do |chat| %>
-    <%= link_to chatroom_path(chat) do %>
-      <%= cl_image_tag chat.event.user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show' %>
-      <p><%= chat.event.name %></p>
-      <p>Created by: <%= chat.event.user.name %></p>
-      <p>Conversation started: <%= chat.updated_at.to_date %></p>
-    <% end %>
+      <div class="col-6 col-md-4">
+        <%= link_to chatroom_path(chat) do %>
+        <div class="d-flex">
+          <%= cl_image_tag chat.event.user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show' %>
+            <div class="ml-3">
+              <p><%= chat.event.name %></p>
+              <p>Created by: <%= chat.event.user.name %></p>
+              <p>Conversation started: <%= chat.updated_at.to_date %></p>
+            </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>

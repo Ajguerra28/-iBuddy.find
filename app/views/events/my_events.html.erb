@@ -26,7 +26,6 @@
         <button type="button" id ="review"class="col btn btn-warning">Review</button>
       </div>
 
-
     </div>
   </div> <!--col profile -->
 
@@ -49,7 +48,11 @@
         <% current_user.events.each do |event| %>
 
           <div class="card-trip" >
-            <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+            <% if event.photo.key.nil? %>
+              <img src="https://powerthoughtsmeditationclub.com/wp-content/uploads/2015/10/bigstock-Happy-group-of-friends-family-43459618.jpg" alt="" class="card-img-top" />
+            <% else %>
+              <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+            <% end %>
 
             <div class="card-trip-infos">
 
