@@ -150,7 +150,7 @@ users = User.all
 event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night out', description:'Party all night long', price: 20 , max_people: 3)
 event1.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
 event1.photo.attach(
-  io: File.open(Rails.root.join("app/assets/images/category_img/urban.jpg")),
+  io: URI.open("https://res.cloudinary.com/dv6tpcucf/image/upload/v1631717610/development/ceo3u4skhlek70clgocfrc4e3sa0.jpg"),
   filename: 'urban.jpg'
 )
 
