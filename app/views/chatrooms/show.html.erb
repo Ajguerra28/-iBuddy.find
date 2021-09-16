@@ -5,15 +5,16 @@
       <div class ="col-4 rounded"> <!--col profile -->
         <div class="profile-info-card-event">
           <div class="profile-info-card-event-info">
-            <img width="80" height="80" class="avatar-event-show" src="http://res.cloudinary.com/dv6tpcucf/image/upload/c_fill,h_80,w_80/v1/development/u19n8jkerht7afrg0z3le6tiv0ft" />
-            <h5 class="profile-info-card-event-name"><%= @event.user.names%></h5>
-            <p class="profile-info-card-event-email"><i class="fas fa-envelope"></i>  garret@kuhlman.org</p>
+            <%= cl_image_tag(@chatroom.event.user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show') %>
+            <h5 class="profile-info-card-event-name"><%= @chatroom.event.user.name %></h5>
+            <p class="profile-info-card-event-email"><i class="fas fa-envelope"></i>  <%= @chatroom.event.user.email %></p>
           </div>
-          <div class="profile-info-card-event-info2">
-            <p><i class="fas fa-birthday-cake"></i>  38 y</p>
-            <p><i class="fas fa-pen-square"></i>  Voluptatum dolor culpa. Sunt omnis quod. Vel repellat voluptatum. Et quia suscipit. Nam culpa velit.</p>
-            <p><i class="fas fa-venus-mars"></i>  Female</p>
+           <div class="profile-info-card-event-info2">
+            <p><i class="fas fa-birthday-cake"></i>  <%= ((Date.today - @chatroom.event.user.date_of_birth )/365).to_i%> y</p>
+            <p><i class="fas fa-pen-square"></i>  <%= @chatroom.event.user.description %></p>
+            <p><i class="fas fa-venus-mars"></i>  <%= @chatroom.event.user.gender %></p>
           </div>
+
           <a href="/chatrooms/5">
           </a>
           <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
@@ -56,7 +57,7 @@
             </div>
             <div id="messages" data-chatroom-id="<%= @chatroom.id %>"></div>
             <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-              <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+              <%= f.input :content, label: false, placeholder: "Message #{@chatroom.event.user.name}" %>
               <div id="button-chatroom">
                 <button class="send-message">Send message</button>
               </div>
