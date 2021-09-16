@@ -147,12 +147,13 @@ puts "----------------------------------------------"
 users = User.all
 
 
-event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night out', description:'Party all night long', price: 20 , max_people: 3)
+event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night out', description:'Party all night long', price: 20, max_people: 3)
 event1.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
 event1.photo.attach(
   io: URI.open("https://res.cloudinary.com/dv6tpcucf/image/upload/v1631717610/development/ceo3u4skhlek70clgocfrc4e3sa0.jpg"),
   filename: 'urban.jpg'
 )
+event1.save!
 
 event2 = Event.create!(user: users.sample, name:'Dinner at McDonalds', location:'Av. Padre Cruz, 1600-001 Lisboa', category:'Gastronomy', description:"Let's eat like an American", price: 10, max_people: 4)
 event2.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
