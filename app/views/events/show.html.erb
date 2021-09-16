@@ -76,7 +76,9 @@
         <div id="book" class="event-card-btn">
           <% if @event.user != current_user %>
             <% if @event.day.booked_by?(current_user) %>
-              <h2>It seems you've already joined this event!</h2>
+            <%= simple_form_for [@event.day, @booking] do |f| %>
+              <%= f.submit "You've joined!", class:'btn btn-warning', disabled:'disabled', id:'sweet-alert-demo' %>
+            <% end %>
             <% elsif !policy(@event).create_booking? %>
               <h2>Too late! The event is already full.</h2>
             <% else %>

@@ -1,7 +1,7 @@
 <div class="row">
   <% @chatrooms.each do |chat| %>
-      <div class="col-6 col-md-4">
-        <%= link_to chatroom_path(chat) do %>
+    <div class="col-6 col-md-4">
+      <%= link_to chatroom_path(chat) do %>
         <div class="d-flex">
           <%= cl_image_tag chat.event.user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show' %>
             <div class="ml-3">
