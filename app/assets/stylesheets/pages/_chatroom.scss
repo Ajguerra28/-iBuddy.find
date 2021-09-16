@@ -204,3 +204,20 @@ button {
     justify-self: center;
   }
 }
+
+.card_message {
+  background-color: #DBECF4;
+  border: #000;
+  border-radius: 10px !important;
+  color: black;
+}
+.card_message:hover {
+  text-decoration: none !important;
+}
+
+.text-card-message {
+  height: 400px;
+  a {
+  text-decoration: none;
+  }
+}
