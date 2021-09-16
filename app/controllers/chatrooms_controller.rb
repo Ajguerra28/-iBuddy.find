@@ -5,6 +5,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
+    @event = Event.find(params[:id])
     @message = Message.new(params[:content])
     authorize @chatroom
   end
@@ -13,6 +14,7 @@ class ChatroomsController < ApplicationController
     @event = Event.find(params[:event_id])
     @chatroom = Chatroom.new(user: current_user, event: @event)
     authorize @chatroom
+    authorize @event
     if @chatroom.save
        redirect_to chatroom_path(@chatroom)
     else

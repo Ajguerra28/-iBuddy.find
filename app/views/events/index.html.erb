@@ -57,7 +57,7 @@
               <% if event.photo.key.nil? %>
                 <img src="https://powerthoughtsmeditationclub.com/wp-content/uploads/2015/10/bigstock-Happy-group-of-friends-family-43459618.jpg" alt="" class="card-img-top" />
               <% else %>
-                <%= cl_image_tag  event.photo.key, crop: :fill, class: "card-img-top" %>
+                <%= cl_image_tag event.photo.key, crop: :fill, class: "card-img-top" %>
               <% end %>
               <%= link_to events_path do %> <%# Implement modal to show more information #%>
                 <i class="far fa-eye"></i>

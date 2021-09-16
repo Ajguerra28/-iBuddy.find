@@ -27,7 +27,7 @@ const initSweetalert = (selector, options = {}) => {
           );
           setTimeout(() => {
             document.querySelector("#new_booking").submit();
-          }, 3000);
+          }, 2000);
         }
       });
     });
