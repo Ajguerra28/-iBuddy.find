@@ -20,6 +20,7 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
   validates :location, :name, :category, :description, presence: true
   validates :category, inclusion: { in: CATEGORIES }
+  validates :price, :max_people, numericality: { only_integer: true, greater_than: 0 }
 
   accepts_nested_attributes_for :event_days, allow_destroy: true
 
