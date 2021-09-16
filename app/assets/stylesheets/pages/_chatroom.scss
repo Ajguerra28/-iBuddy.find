@@ -123,8 +123,9 @@ img {max-width: 100%;}
   }
   .messaging { background: #fff;}
   .msg_history {
-    max-height: 516px;
+    height: 300px;
     overflow-y: auto;
+    width: 600px;
   }
 
 .credit {
@@ -140,7 +141,7 @@ img {max-width: 100%;}
 }
 
 .container-messaging {
-  width: 700px;
+  // width: 700px;
   height: auto;
   display: flex;
   margin: auto;
@@ -184,10 +185,11 @@ button {
   &.send-message {
     @include transition(all, 0.5s, cubic-bezier(0.65,-0.25,0.25,1.95));
     font-weight: 900;
-    color: $black;
+    color: white;
     padding: 1.25rem 2rem;
-    background: $white;
+    background: #E67E22;
     text-transform: uppercase;
+    border-radius: 4px !important;
     &:hover, &:focus, &:active {
       letter-spacing: 0.125rem;
     }
@@ -200,5 +202,22 @@ button {
     grid-area: main;
     align-self: center;
     justify-self: center;
+  }
+}
+
+.card_message {
+  background-color: #DBECF4;
+  border: #000;
+  border-radius: 10px !important;
+  color: black;
+}
+.card_message:hover {
+  text-decoration: none !important;
+}
+
+.text-card-message {
+  height: 400px;
+  a {
+  text-decoration: none;
   }
 }

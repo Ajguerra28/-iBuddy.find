@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     if params[:category]
       @events = policy_scope(Event).where(category: params[:category])
     else
-      @events = policy_scope(Event)
+      @events = policy_scope(Event.order("created_at DESC"))
     end
     @markers = []
     @events.each { |event| add_marker(event) }
@@ -22,6 +22,12 @@ class EventsController < ApplicationController
     @booking = Booking.new
     @markers = []
     @reviews = ReviewUser.where(reviewee: @event.user)
+    if @event.chatrooms.where(user: current_user).present?
+      @chatroom = @event.chatrooms.find_by(user: current_user)
+    end
+
+
+
     add_marker(@event)
 
     authorize @event

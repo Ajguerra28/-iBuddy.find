@@ -62,7 +62,7 @@ body {
   box-shadow: 0 0 0 0.1rem rgba(253, 126, 19, 0.6) !important;
   border-radius: 1px;
   cursor: pointer;
-  padding: 10px 5px;
+  padding: 10px 15px;
   margin: 10px 5px;
 }
 
@@ -106,7 +106,7 @@ body {
   list-style-type: none;
   color: grey;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 11px;
   width: 33.33%;
   float: left;
   position: relative;
@@ -117,7 +117,7 @@ body {
   width: 20px;
   line-height: 20px;
   display: block;
-  font-size: 10px;
+  font-size: 16px;
   color: #333;
   background: white;
   border-radius: 3px;
@@ -142,6 +142,7 @@ body {
 #progressbar li.active:before,  #progressbar li.active:after{
   background: rgba(253, 126, 19, 0.6);
   color: white;
+  font-size: 16px;
 }
 
 .btn-outline-success:focus, .btn-outline-success.focus {

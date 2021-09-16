@@ -18,6 +18,7 @@
         <p><i class="fas fa-venus-mars"></i>  <%= @event.user.gender %></p>
       </div>
 
+
       <div class="d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
         <% if @event.user != current_user %>
           <% if @chatroom.present?  %>
@@ -50,11 +51,28 @@
           <% end %>
         
         </div>
+
+
+        <% if @event.user != current_user %>
+          <% if @chatroom.present?  %>
+            <%= link_to chatroom_path(@chatroom) do %>
+            <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+              <button type="button" id="message" class="col btn btn-warning">Join conversation</button>
+            </div>
+            <% end %>
+          <% else %>
+            <%= link_to event_chatrooms_path(@event), method: :post do %>
+            <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+              <button type="button" id="message" class="col btn btn-warning">Start conversation</button>
+            </div>
+            <% end %>
+          <% end %>
+        <% end %>
+
+      <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+        <button type="button" id ="review"class="col btn btn-warning">Review</button>
+
       </div>
-
-
-
-
 
 
     </div>
@@ -64,7 +82,11 @@
 
   <div class ="col-8"> <!--col event -->
     <div class="card-trip">
+    <% if @event.photo.key.nil? %>
+     <img src="https://powerthoughtsmeditationclub.com/wp-content/uploads/2015/10/bigstock-Happy-group-of-friends-family-43459618.jpg" alt="" class="card-img-top" />
+    <% else %>
       <%= cl_image_tag  "#{@event.photo.key}", crop: :fill, class: "card-img-top" %>
+    <% end %>
       <div class="card-trip-infos">
         <div>
           <h5><%= @event.name %></h5>
@@ -88,9 +110,11 @@
         <div id="book" class="event-card-btn">
           <% if @event.user != current_user %>
             <% if @event.day.booked_by?(current_user) %>
-              <span>It seems you've already joined this event!</span>
+            <%= simple_form_for [@event.day, @booking] do |f| %>
+              <%= f.submit "You've joined!", class:'btn btn-warning', disabled:'disabled', id:'sweet-alert-demo' %>
+            <% end %>
             <% elsif !policy(@event).create_booking? %>
-              <span>Too late! The event is already full.</span>
+              <h2>Too late! The event is already full.</h2>
             <% else %>
               <%= simple_form_for [@event.day, @booking] do |f| %>
                 <%= f.submit 'Book now!', class:'btn btn-warning', id:'sweet-alert-demo' %>

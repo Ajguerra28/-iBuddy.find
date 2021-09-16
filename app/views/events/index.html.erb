@@ -54,8 +54,11 @@
           <%= link_to event_path(event) do %>
           <div class="card card-event mb-4">
             <div class="img-download">
-              <%# <img class="card-img-top" src="http://kitt.lewagon.com/placeholder/cities/rio" alt="Card image cap"> %>
-              <%= cl_image_tag  "#{event.photo.key}", crop: :fill, class: "card-img-top" %>
+              <% if event.photo.key.nil? %>
+                <img src="https://powerthoughtsmeditationclub.com/wp-content/uploads/2015/10/bigstock-Happy-group-of-friends-family-43459618.jpg" alt="" class="card-img-top" />
+              <% else %>
+                <%= cl_image_tag event.photo.key, crop: :fill, class: "card-img-top" %>
+              <% end %>
               <%= link_to events_path do %> <%# Implement modal to show more information #%>
                 <i class="far fa-eye"></i>
               <% end %>
@@ -77,7 +80,7 @@
                 <div class="event-main-content d-flex participants">
                   <i class="fas fa-user-alt mr-2 mt-2"></i>
                   <% if event.max_people <= 3 %>
-                    <p class="location-event">Hurry up! There are only <%= event.people_left %> spots left!</p>
+                    <p class="location-event">Hurry up!<br id="gap_between"> There are only <%= event.people_left %> spots left!</p>
                   <% else %>
                     <p class= "location-event"><%= event.people_left %> spots left</p>
                   <% end %>

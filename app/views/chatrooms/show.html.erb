@@ -1,46 +1,69 @@
+<div class="back-show"><%= link_to events_path do %><p><i class="fas fa-arrow-left"></i> Back</p><% end %></div>
+<h1 class="heading text-center">Send a message now!</h1>
 <div class="container-messaging">
-  <div>
-    <h1 class="heading text-center">#<%= @chatroom.name %></h1>
+    <div class="container d-flex justify-content-between">
+      <div class ="col-4 rounded"> <!--col profile -->
+        <div class="profile-info-card-event">
+          <div class="profile-info-card-event-info">
+            <%= cl_image_tag(@chatroom.event.user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show') %>
+            <h5 class="profile-info-card-event-name"><%= @chatroom.event.user.name %></h5>
+            <p class="profile-info-card-event-email"><i class="fas fa-envelope"></i>  <%= @chatroom.event.user.email %></p>
+          </div>
+           <div class="profile-info-card-event-info2">
+            <p><i class="fas fa-birthday-cake"></i>  <%= ((Date.today - @chatroom.event.user.date_of_birth )/365).to_i%> y</p>
+            <p><i class="fas fa-pen-square"></i>  <%= @chatroom.event.user.description %></p>
+            <p><i class="fas fa-venus-mars"></i>  <%= @chatroom.event.user.gender %></p>
+          </div>
 
-    <div class="messaging">
-          <div class="inbox_msg">
-            <div class="mesgs">
-              <div class="msg_history">
-                <div class="incoming_msg">
-                  <div class="received_msg">
-                    <div class="received_withd_msg">
-                      <% @chatroom.messages.each do |message| %>
-                       <% if message.user == current_user %>
-                        <%= cl_image_tag current_user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
-                        <%= message.user.name %>
-                        <p><%= message.content %> </p>
-                        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
-                      <% else %>
-                        <div class="outgoing_msg">
-                          <div class="sent_msg">
+          <a href="/chatrooms/5">
+          </a>
+          <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+            <button type="button" id ="review"class="col btn btn-warning">Review</button>
+          </div>
+        </div>
+      </div>
+      <!--col message -->
+      <div class ="col-8">
+        <div class="messaging">
+              <div class="inbox_msg">
+                <div class="mesgs">
+                  <div class="msg_history">
+                    <div class="incoming_msg">
+                      <div class="received_msg">
+                        <div class="received_withd_msg">
+                          <% @chatroom.messages.each do |message| %>
+                          <% if message.user != current_user %>
+                            <%= cl_image_tag current_user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
                             <%= message.user.name %>
-                            <%= cl_image_tag message.user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
                             <p><%= message.content %> </p>
                             <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
-                          </div>
+                          <% else %>
+                            <div class="outgoing_msg">
+                              <div class="sent_msg">
+                                <%= message.user.name %>
+                                <%= cl_image_tag message.user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
+                                <p><%= message.content %> </p>
+                                <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
+                              </div>
+                            </div>
+                          <% end %>
+                        <% end %>
                         </div>
-                      <% end %>
-                    <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div id="messages" data-chatroom-id="<%= @chatroom.id %>"></div>
+            <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+              <%= f.input :content, label: false, placeholder: "Message #{@chatroom.event.user.name}" %>
+              <div id="button-chatroom">
+                <button class="send-message">Send message</button>
+              </div>
+            <% end %>
           </div>
         </div>
-        <div id="messages" data-chatroom-id="<%= @chatroom.id %>"></div>
-        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-          <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
-          <div id="button-chatroom">
-            <button class="send-message">Send message</button>
-          </div>
-        <% end %>
       </div>
     </div>
-  </div>
 </div>

@@ -1,6 +1,16 @@
- <% @chatrooms.each do |chat| %>
-  <%= link_to chatroom_path(chat) do %>
-    <p><%= chat.user_id.name %></p>
-    <p><%= chat.updated_at.to_date %></p>
+<div class="row justify-content-center">
+  <% @chatrooms.each do |chat| %>
+      <div class="col-6 col-md-4 text-card-message">
+        <%= link_to chatroom_path(chat), class:'clickable-link' do %>
+        <div class="d-flex card_message ml-3">
+          <%= cl_image_tag chat.event.user.avatar.key, width: 80, height: 80, crop: :fill, class:'avatar-event-show ml-3' %>
+            <div class="ml-3">
+              <p><%= chat.event.name %></p>
+              <p>Created by: <%= chat.event.user.name %></p>
+              <p>Conversation started: <%= chat.updated_at.to_date %></p>
+            </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>
