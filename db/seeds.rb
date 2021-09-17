@@ -18,21 +18,34 @@ puts "----------------------------------------------"
 puts "------ Creating the three musketeers.. -------"
 puts "----------------------------------------------"
 
-antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Via Futebol Clube do Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+antonio = User.create(name: 'António Guerra', email: 'antonioguerrained@gmail.com', password: '123123', location: 'Via Futebol Clube do Porto', date_of_birth: Faker::Date.birthday(min_age: 24, max_age: 25), gender: 'male', phone_number: '+351927624961', description: "I'm from Porto, the first word I said was P*** que P**** caral**. I came to Lisbon to take a course and meet some girls")
 antonio.avatar.attach(
   io: File.open(Rails.root.join("app/assets/images/avatars/main_users/antonio.jpg")),
   filename: 'antonio'
 )
-david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Rua Manuel Arriaga', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+david = User.create(name: 'David Luis', email: 'davidluis2020@gmail.com', password: '123123', location: 'Rua Manuel Arriaga', date_of_birth: Faker::Date.birthday(min_age: 26, max_age: 27), gender: 'male', phone_number: '+351912345678', description: "My name is David Luís, but don't confuse me with the football player I have a lot less hair.In your free time, enjoy doing outdoor activities.")
 david.avatar.attach(
   io: File.open(Rails.root.join("app/assets/images/avatars/main_users/david.jpg")),
   filename: 'david'
 )
-mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634', description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4))
+mariana = User.create(name: 'Mariana Kobayashi', email: 'marianadanifk@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351937826634', description: "Kobayashi a name that stays in the mind. Join me for a drink and I'll see if your LinkedIn is good")
 mariana.avatar.attach(
   io: File.open(Rails.root.join("app/assets/images/avatars/main_users/mariana.jpg")),
   filename: 'mariana'
 )
+
+fernando = User.create(name: 'Fernando Jardim', email: 'fernandojardim@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'male', phone_number: '+351937823334', description: "Brazilian living in Portugal. Currently studying but above all enjoying life. And of course I make the best caipirinhas")
+fernando.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/avatars/main_users/fernando.jpg")),
+  filename: 'fernando'
+)
+
+margarida = User.create(name: 'Margarida Toureiro', email: 'margaridatoureiro@gmail.com', password: '123123', location: 'Av. do Uruguai 36', date_of_birth: Faker::Date.birthday(min_age: 23, max_age: 25), gender: 'female', phone_number: '+351447823334', description: "Hi my name is Margarida and I was born on the wrong side of the Tejo river 😥. My hobbies are going to the gym and my dream is to participate in Ninja Warrior 🐱‍👤")
+margarida.avatar.attach(
+  io: File.open(Rails.root.join("app/assets/images/avatars/main_users/margarida.jpg")),
+  filename: 'margarida'
+)
+
 
 puts "----------------------------------------------"
 puts "----- Hello António, David and Mariana! ------"
