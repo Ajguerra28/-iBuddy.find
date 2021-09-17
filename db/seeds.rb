@@ -160,7 +160,7 @@ puts "----------------------------------------------"
 users = User.all
 
 
-event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night out', description:'Party all night long', price: 20, max_people: 3)
+event1 = Event.create!(user: users.sample, name:'Party in Urban', location:'Cais da Viscondessa, 1200-109 Lisboa', category:'Night Out', description:'Party all night long', price: 20, max_people: 3)
 event1.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
 event1.photo.attach(
   io: URI.open("https://res.cloudinary.com/dv6tpcucf/image/upload/v1631717610/development/ceo3u4skhlek70clgocfrc4e3sa0.jpg"),
@@ -260,7 +260,7 @@ event14.photo.attach(
   filename: 'arte'
 )
 
-event15 = Event.create!(user: users.sample, name:"Let's go to Bairro", location:'Praça Luís de Camões, 1200-283 Lisboa', category:'Night out', description:'Party all night long. Must test negative to Covid-19 and positive to getting drunk!', price:10, max_people:5)
+event15 = Event.create!(user: users.sample, name:"Let's go to Bairro", location:'Praça Luís de Camões, 1200-283 Lisboa', category:'Night Out', description:'Party all night long. Must test negative to Covid-19 and positive to getting drunk!', price:10, max_people:5)
 event15.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
 event15.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/category_img/nightclub.jpg")),
@@ -295,7 +295,7 @@ event19.photo.attach(
   filename: 'soccergame'
 )
 
-event20 = Event.create!(user: users.sample, name:'Girls just wanna have fun ;)', location:'R. da Cintura do Porto de Lisboa, 1200-109 Lisboa', category:'Night out', description:'The name says it all. Join us if you have interest!', price:20, max_people:5)
+event20 = Event.create!(user: users.sample, name:'Girls just wanna have fun ;)', location:'R. da Cintura do Porto de Lisboa, 1200-109 Lisboa', category:'Night Out', description:'The name says it all. Join us if you have interest!', price:20, max_people:5)
 event20.event_days.create!(date: Faker::Date.between(from: '2021-09-12', to: '2021-12-25'))
 event20.photo.attach(
   io: File.open(Rails.root.join("app/assets/images/category_img/partygirls.jpg")),

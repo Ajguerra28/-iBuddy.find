@@ -25,9 +25,6 @@ class EventsController < ApplicationController
     if @event.chatrooms.where(user: current_user).present?
       @chatroom = @event.chatrooms.find_by(user: current_user)
     end
-
-
-
     add_marker(@event)
 
     authorize @event
@@ -51,6 +48,13 @@ class EventsController < ApplicationController
   def update
     @event.update(event_params)
     @event.save ? (redirect_to event_path(@event)) : (render :new)
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    authorize @event
+    @event.destroy
+    redirect_to "/events/my_events"
   end
 
   private

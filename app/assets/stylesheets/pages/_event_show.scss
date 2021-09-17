@@ -11,7 +11,7 @@
 .profile-info-card-event{
   width: auto;
   height: 100%;
-  min-height: 550px;
+  min-height: 34.375em;
   padding: 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -76,7 +76,7 @@
 }
 
 .card-trip > img {
-  height: 250px;
+  height: 15.625em;
   width: 100%;
   object-fit: cover;
 }
@@ -123,6 +123,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0px !important;
+
 }
 
 .card-trip-infos h5 {
@@ -133,10 +135,6 @@
   font-size: 16px;
   opacity: .7;
   margin-top: 10px;
-}
-
-#map {
-  margin: 0px !important;
 }
 
 #gap_between {
@@ -162,7 +160,7 @@
   width: 100%;
   border-radius: 4px;
   border-style: 1px solid rgba(218, 223, 225, 1);
-  border-width: 1px; 
+  border-width: 1px;
 }
 
 .star-yellow {
