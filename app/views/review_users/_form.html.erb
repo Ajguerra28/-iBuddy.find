@@ -4,14 +4,12 @@
   <%= simple_form_for [@event,@review], html: { class: "msform" }  do |f| %>
     <!-- progressbar -->
     <ul id="progressbar">
-      <li class="active">Create an event</li>
-      <li>Price and People</li>
-      <li>Final details</li>
+      <h2>Add a review</h2>
     </ul>
     <!-- fieldsets -->
     <fieldset>
-      <h2 class="fs-title">Let's add an event</h2>
-      <h3 class="fs-subtitle">Enter a name and the category of your event.</h3>
+      <h2 class="fs-title">Review Time!</h2>
+      <h3 class="fs-subtitle">Let us know how was your experience.</h3>
       <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: 'review_rating' } %>
       <%= f.input :content,
                   required: true,
@@ -19,7 +17,7 @@
                   autofocus: true,
                   input_html: { autocomplete: "Category" } %>
       <%# <%= f.button :submit, "Next", class:'btn btn-outline-success next' %>
-      <%= f.button :submit, "Submit", class:'btn btn-outline-success' %>
+      <%= f.button :submit, "Review", class:'btn btn-outline-success' %>
     </fieldset>
   <% end %>
   <%# </form> %>
