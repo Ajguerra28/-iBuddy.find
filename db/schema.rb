@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_142334) do
+ActiveRecord::Schema.define(version: 2021_09_17_112720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,9 +100,9 @@ ActiveRecord::Schema.define(version: 2021_09_15_142334) do
     t.integer "rating"
     t.string "content"
     t.bigint "reviewee_id", null: false
+    t.bigint "reviewer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "reviewer_id"
     t.index ["reviewee_id"], name: "index_review_users_on_reviewee_id"
     t.index ["reviewer_id"], name: "index_review_users_on_reviewer_id"
   end
@@ -134,4 +134,5 @@ ActiveRecord::Schema.define(version: 2021_09_15_142334) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "review_users", "users", column: "reviewee_id"
+  add_foreign_key "review_users", "users", column: "reviewer_id"
 end

@@ -33,9 +33,9 @@
                         <div class="received_withd_msg">
                           <% @chatroom.messages.each do |message| %>
                           <% if message.user != current_user %>
-                            <%= cl_image_tag current_user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
+                            <%# <%= cl_image_tag current_user.avatar.key, crop: :fill, class:'incoming_msg_img' %>
                             <%= message.user.name %>
-                            <p><%= message.content %> </p>
+                            <p id="text"><%= message.content %> </p>
                             <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")%></small><br>
                           <% else %>
                             <div class="outgoing_msg">
