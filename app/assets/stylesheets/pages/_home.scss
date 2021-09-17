@@ -90,6 +90,10 @@ body {
   }
 }
 
+.fab {
+  margin-top: 15px;
+}
+
 .card-body-home-page .centered {
   transition: transform .2s;
   &:hover {
@@ -132,7 +136,7 @@ body {
    }
 
    .row {
-     margin: 0;
+     margin: 0px !important;
    }
 
    .fa-map-marker-alt {
