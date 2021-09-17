@@ -21,36 +21,38 @@
 
 
 
-        <% if @event.user != current_user %>
-          <% if @chatroom.present?  %>
-            <%= link_to chatroom_path(@chatroom) do %>
-              <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
-                <button type="button" id="message" class="col btn btn-warning">Join conversation</button>
-              </div>
-            <% end %>
-          <% else %>
-            <%= link_to event_chatrooms_path(@event), method: :post do %>
-              <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
-                <button type="button" id="message" class="col btn btn-warning">Start conversation</button>
-              </div>
-            <% end %>
+      <% if @event.user != current_user %>
+        <% if @chatroom.present?  %>
+          <%= link_to chatroom_path(@chatroom) do %>
+            <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+              <button type="button" id="message" class="col btn btn-warning">Join conversation</button>
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to event_chatrooms_path(@event), method: :post do %>
+            <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+              <button type="button" id="message" class="col btn btn-warning">Start conversation</button>
+            </div>
           <% end %>
         <% end %>
+      <% end %>
 
-      <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
-        <button type="button" id ="review"class="col btn btn-warning">Review</button>
-      </div>
+      <%= link_to new_event_review_user_path(@event) do %>
+        <div class="row d-flex justify-content-between ml-4 mr-4 profile-info-card-event-card-button">
+          <button type="button" id ="review"class="col btn btn-warning">Review</button>
+        </div>
+      <% end %>
 
-      <div class="d-flex ml-3">
+      <div class="d-flex profile-info-review">
         <div>
-          <h3>Reviews</h3>
+          <h3>Reviews:</h3>
           <% @reviews.each do |review| %>
-            <div>
+            <div class="justify-content-between ml-2 mr-2 mt-3 review-css">
               <%review.rating.times do %>
                 <i class="fas fa-star star-yellow"></i>
               <% end %>
               <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-              <p class="mb-0"><%= review.content %></p>
+              <p class="m-2"><%= review.content %></p>
             </div>
           <% end %>
         </div>

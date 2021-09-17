@@ -216,7 +216,8 @@ button {
 }
 
 .text-card-message {
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   a {
   text-decoration: none;
   }

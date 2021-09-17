@@ -61,6 +61,7 @@
 #review {
   color: white !important;
   font-size: 16px !important;
+  margin-bottom: 30px;
 }
 
 #text {
@@ -143,4 +144,26 @@
   content: ""; /* clears default height */
   margin-top: -10px; /* change this to whatever height you want it */
 
+}
+////////////////////////// review
+
+.profile-info-review {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  width: 100%;
+}
+
+
+.review-css {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 2px;
+  width: 100%;
+  border-radius: 4px;
+  border-style: 1px solid rgba(218, 223, 225, 1);
+  border-width: 1px; 
+}
+
+.star-yellow {
+  color: #FD7E13;
 }
