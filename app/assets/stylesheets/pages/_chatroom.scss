@@ -46,7 +46,7 @@ img {max-width: 100%;}
     margin: 0;
     padding: 18px 16px 10px;
   }
-  .inbox_chat { height: 550px; overflow-y: scroll;}
+  .inbox_chat { height: 34.375em; overflow-y: scroll;}
 
   .active_chat{ background:#ebebeb;}
 
@@ -115,17 +115,17 @@ img {max-width: 100%;}
     color: #fff;
     cursor: pointer;
     font-size: 17px;
-    height: 33px;
+    height: 2.063em;
     position: absolute;
     right: 0;
     top: 11px;
-    width: 33px;
+    width: 2.063em;
   }
   .messaging { background: #fff;}
   .msg_history {
-    height: 300px;
+    height: 18.75em;
     overflow-y: auto;
-    width: 600px;
+    width: 37.5em;
   }
 
 .credit {
@@ -216,7 +216,7 @@ button {
 }
 
 .text-card-message {
-  height: 400px;
+  height: 25em;
   a {
   text-decoration: none;
   }
