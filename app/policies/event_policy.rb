@@ -21,9 +21,9 @@ class EventPolicy < ApplicationPolicy
   #   owner?
   # end
 
-  # def destroy
-  #   owner?
-  # end
+  def destroy?
+    owner?
+  end
 
   def my_events?
     true

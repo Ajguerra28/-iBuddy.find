@@ -55,6 +55,11 @@
                 <p><i class="fas fa-glass-cheers "></i>  <%= event.category %></p>
                 <p><i class="fas fa-euro-sign"></i>  <%= event.price %></p>
                 <p><i class="fas fa-users"></i>  <span id="max_people"><%= event.people_left %>
+                <p>olaola<%= link_to "🗑 delete",
+                event_path(event),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></p>
+      
               </div>
 
             </div>
@@ -78,6 +83,7 @@
                 <p><i class="fas fa-euro-sign"></i>  <%= event_day.event.price %></p>
                 <p><i class="fas fa-users"></i>  <span id="max_people"><%#= event.people_left %>
               </div>
+              
 
             </div>
           </div>
