@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :events do
-    resources :review_users, only: [:create, :new]
+    resources :review_users, only: [:create, :new, :index]
 
     resources :chatrooms, only: :create
     collection do
