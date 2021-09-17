@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   has_one_attached :photo
 
   CATEGORIES = [
-    'Night out',
+    'Night Out',
     'Gastronomy',
     'Sports',
     'Travel',
