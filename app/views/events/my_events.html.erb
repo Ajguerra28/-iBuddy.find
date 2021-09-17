@@ -55,11 +55,12 @@
                 <p><i class="fas fa-glass-cheers "></i>  <%= event.category %></p>
                 <p><i class="fas fa-euro-sign"></i>  <%= event.price %></p>
                 <p><i class="fas fa-users"></i>  <span id="max_people"><%= event.people_left %>
-                <p>olaola<%= link_to "🗑 delete",
-                event_path(event),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %></p>
-      
+                <p>
+              <%= link_to event_path(event), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <div class="row d-flex justify-content-between mr-4 profile-info-card-event-card-button">
+                  <button type="button" id="message" class="col btn btn-warning">Delete Event</button>
+                </div>
+              <% end %>
               </div>
 
             </div>
@@ -83,7 +84,7 @@
                 <p><i class="fas fa-euro-sign"></i>  <%= event_day.event.price %></p>
                 <p><i class="fas fa-users"></i>  <span id="max_people"><%#= event.people_left %>
               </div>
-              
+
 
             </div>
           </div>
