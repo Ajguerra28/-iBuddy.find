@@ -43,11 +43,11 @@
         </div>
       <% end %>
 
-      <div class="d-flex profile-info-review">
+      <div class="d-flex overflow-auto profile-info-review">
         <div>
           <h3>Reviews:</h3>
           <% @reviews.each do |review| %>
-            <div class="justify-content-between ml-2 mr-2 mt-3 review-css">
+            <div class="justify-content-between m-4 review-css">
               <%review.rating.times do %>
                 <i class="fas fa-star star-yellow"></i>
               <% end %>

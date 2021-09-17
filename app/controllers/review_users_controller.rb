@@ -13,7 +13,7 @@ class ReviewUsersController < ApplicationController
     @review.reviewee = @event.user
     authorize @review
     if @review.save
-      redirect_to events_path(@user)
+      redirect_to event_path(@event)
     else
       render 'events/show'
     end
