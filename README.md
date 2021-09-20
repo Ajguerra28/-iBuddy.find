@@ -3,7 +3,7 @@
 <p>
   This app was developed by <strong><a href="https://github.com/Ajguerra28" target="_blank">@Ajguerra28</a>, <a href="https://github.com/marianadkobayashi" target="_blank">@marianadkobayashi</a> and <a href="https://github.com/david2luis" target="_blank">@david2luis</a></strong> as a project to finish of the bootcamp from <strong>@lewagon.</strong>
 
-  <i><strong>iBuddyfind</strong></i> is for people to find a companion for the various activities they want to perform. They no longer have to miss doing something for not having someone to do it with.
+  <i><strong><a href="http://www.ibuddyfind.com" target="_blank">iBuddyfind</a></strong></i> is for people to find a companion for the various activities they want to perform. They no longer have to miss doing something for not having someone to do it with.
 </p>
 
 <h2>Team:</h2>
@@ -24,6 +24,6 @@
   <img alt="Ruby" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg">
 </ul>
 
-
-<p>© 2021 Antonio Guerra. All rights reserved.</p>
+---------------------------
+© 2021 Antonio Guerra. All rights reserved.
 
